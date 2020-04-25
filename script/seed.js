@@ -9,13 +9,15 @@ async function seed() {
   console.log('db synced!')
 
   const items = await Promise.all([
-    Item.create({name: 'Tequila'}),
-    Item.create({name: 'Vodka'}),
-    Item.create({name: 'Rum'}),
-    Item.create({name: 'Gin'}),
-    Item.create({name: 'Whiskey'}),
-    Item.create({name: 'Ice'}),
-    Item.create({name: 'Soda Water'})
+    Item.create({name: 'Tequila', category: 'liquor'}),
+    Item.create({name: 'Vodka', category: 'liquor'}),
+    Item.create({name: 'Rum', category: 'liquor'}),
+    Item.create({name: 'Gin', category: 'liquor'}),
+    Item.create({name: 'Whiskey', category: 'liquor'}),
+    Item.create({name: 'Ice', category: 'ingredient'}),
+    Item.create({name: 'Soda Water', category: 'ingredient'}),
+    Item.create({name: 'Cocktail Shaker', category: 'accesory'}),
+    Item.create({name: 'Blender', category: 'accesory'})
   ])
 
   console.log(`seeded ${items.length} items`)
