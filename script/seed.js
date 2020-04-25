@@ -2,6 +2,7 @@
 
 const db = require('../server/db')
 const {Item} = require('../server/db/models')
+const {Recipe} = require('../server/db/models')
 
 async function seed() {
   await db.sync({force: true})
@@ -12,10 +13,20 @@ async function seed() {
     Item.create({name: 'Vodka'}),
     Item.create({name: 'Rum'}),
     Item.create({name: 'Gin'}),
-    Item.create({name: 'Whiskey'})
+    Item.create({name: 'Whiskey'}),
+    Item.create({name: 'Ice'}),
+    Item.create({name: 'Soda Water'})
   ])
 
   console.log(`seeded ${items.length} items`)
+  console.log(`seeded successfully`)
+
+  const recipes = await Promise.all([
+    Recipe.create({name: 'Tequila Soda'}),
+    Recipe.create({name: 'Vodka Soda'})
+  ])
+
+  console.log(`seeded ${recipes.length} recipes`)
   console.log(`seeded successfully`)
 }
 
