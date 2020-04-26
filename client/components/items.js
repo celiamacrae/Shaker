@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchItems} from '../store/items'
+import {shake} from '../store/cocktails'
 
 class Items extends React.Component {
   constructor() {
@@ -10,6 +11,7 @@ class Items extends React.Component {
     }
     this.addToBar = this.addToBar.bind(this)
     this.removeFromBar = this.removeFromBar.bind(this)
+    this.shakeItUp = this.shakeItUp.bind(this)
   }
   componentDidMount() {
     this.props.fetchItems()
@@ -29,18 +31,38 @@ class Items extends React.Component {
     })
   }
 
+  shakeItUp() {
+    // console.log("SHAKER", this.state.myBar)
+    let bar = this.state.myBar
+    this.props.shake(bar)
+  }
+
   render() {
-    // console.log(this.props.items)
+    console.log('here', this.props)
     return (
       <div>
         <div>
           <h1>MY BAR:</h1>
           <ul>
             {this.state.myBar.map(item => {
-              return <li>{item}</li>
+              return <li key={item}>{item}</li>
             })}
           </ul>
+          <button type="submit" onClick={this.shakeItUp}>
+            SHAKE
+          </button>
         </div>
+
+        {this.props.cocktails ? (
+          <div>
+            <h1>Cocktails:</h1>
+            {this.props.cocktails.map(cocktail => {
+              return <li key="cocktail">{cocktail}</li>
+            })}
+          </div>
+        ) : (
+          <div />
+        )}
 
         <div>
           <h1>ITEMS:</h1>
@@ -52,7 +74,7 @@ class Items extends React.Component {
                   <button
                     value={item.name}
                     type="submit"
-                    key={item.id}
+                    // key={item.id}
                     onClick={this.addToBar}
                   >
                     ADD TO BAR
@@ -60,7 +82,6 @@ class Items extends React.Component {
                   <button
                     value={item.name}
                     type="submit"
-                    key={item.id}
                     onClick={this.removeFromBar}
                   >
                     REMOVE FROM BAR
@@ -76,11 +97,13 @@ class Items extends React.Component {
 }
 
 const mapState = state => ({
-  items: state.items
+  items: state.items,
+  cocktials: state.cocktails
 })
 
 const mapDispatch = dispatch => ({
-  fetchItems: () => dispatch(fetchItems())
+  fetchItems: () => dispatch(fetchItems()),
+  shake: bar => dispatch(shake(bar))
 })
 
 export default connect(mapState, mapDispatch)(Items)
