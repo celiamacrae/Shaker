@@ -44,11 +44,11 @@ class Items extends React.Component {
 
         <div>
           <h1>ITEMS:</h1>
-          <ul>
+          <div id="allitems">
             {this.props.items.map(item => {
               return (
-                <div key={item.id}>
-                  <li>{item.name}</li>
+                <div className="item" key={item.id}>
+                  <p className="itemName">{item.name}</p>
                   <button
                     value={item.name}
                     type="submit"
@@ -68,7 +68,7 @@ class Items extends React.Component {
                 </div>
               )
             })}
-          </ul>
+          </div>
         </div>
       </div>
     )

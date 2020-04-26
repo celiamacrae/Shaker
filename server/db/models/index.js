@@ -1,6 +1,10 @@
 const User = require('./user')
 const Item = require('./item')
 const Recipe = require('./recipe')
+const RecipeItem = require('./recipeItems')
+
+Item.belongsToMany(Recipe, {through: RecipeItem})
+Recipe.belongsToMany(Item, {through: RecipeItem})
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -18,5 +22,6 @@ const Recipe = require('./recipe')
 module.exports = {
   User,
   Item,
-  Recipe
+  Recipe,
+  RecipeItem
 }
