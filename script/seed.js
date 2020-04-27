@@ -26,7 +26,13 @@ async function seed() {
 
   const recipes = await Promise.all([
     Recipe.create({name: 'Tequila Soda'}),
-    Recipe.create({name: 'Vodka Soda'})
+    Recipe.create({name: 'Vodka Soda'}),
+    Recipe.create({
+      name: 'Vodka on the Rocks',
+      description:
+        'Fill a rocks glass to the top with ice cubes. Pour in 2oz of vodka. Optionally: Garnish with lemon Zest.'
+    }),
+    Recipe.create({name: 'Tequila'})
   ])
 
   console.log(`seeded ${recipes.length} recipes`)

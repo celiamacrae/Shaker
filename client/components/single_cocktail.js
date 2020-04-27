@@ -12,6 +12,11 @@ class SingleCocktail extends React.Component {
     return (
       <div>
         <h1>{this.props.cocktail.name}</h1>
+        {this.props.cocktail.description ? (
+          <h4>{this.props.cocktail.description}</h4>
+        ) : (
+          <h3 />
+        )}
       </div>
     )
   }

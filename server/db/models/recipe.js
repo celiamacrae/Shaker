@@ -7,6 +7,9 @@ const Recipe = db.define('recipe', {
   },
   urlifyName: {
     type: Sequelize.STRING
+  },
+  description: {
+    type: Sequelize.TEXT
   }
 })
 
