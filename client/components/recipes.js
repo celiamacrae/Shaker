@@ -1,8 +1,23 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchRecipes} from '../store/recipes'
+import {Link} from 'react-router-dom'
 
 class Recipes extends React.Component {
+  constructor() {
+    super()
+    this.state = {}
+    this.urlify = this.urlify.bind(this)
+  }
+
+  urlify(name) {
+    let words = name
+      .toLowerCase()
+      .split(' ')
+      .join('_')
+    return words
+  }
+
   componentDidMount() {
     this.props.fetchRecipes()
   }
@@ -12,11 +27,15 @@ class Recipes extends React.Component {
     return (
       <div>
         <h1>RECIPES:</h1>
-        <ul>
-          {this.props.recipes.map(recipe => {
-            return <li key={recipe.id}>{recipe.name}</li>
-          })}
-        </ul>
+        {this.props.recipes.map(recipe => {
+          return (
+            <div key={recipe.id}>
+              <Link to={`/recipes/${this.urlify(recipe.name)}`}>
+                {recipe.name}
+              </Link>
+            </div>
+          )
+        })}
       </div>
     )
   }

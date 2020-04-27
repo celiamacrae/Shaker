@@ -34,7 +34,9 @@ async function seed() {
 
   const recipesitems = await Promise.all([
     RecipeItem.create({recipeId: 1, itemId: 1}),
-    RecipeItem.create({recipeId: 1, itemId: 7})
+    RecipeItem.create({recipeId: 1, itemId: 7}),
+    RecipeItem.create({recipeId: 2, itemId: 2}),
+    RecipeItem.create({recipeId: 2, itemId: 7})
   ])
 
   console.log(`seeded ${recipesitems.length} recipes`)

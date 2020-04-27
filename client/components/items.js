@@ -7,7 +7,8 @@ class Items extends React.Component {
   constructor() {
     super()
     this.state = {
-      myBar: ['Ice']
+      myBar: ['Ice'],
+      cocktails: false
     }
     this.addToBar = this.addToBar.bind(this)
     this.removeFromBar = this.removeFromBar.bind(this)
@@ -35,6 +36,9 @@ class Items extends React.Component {
     // console.log("SHAKER", this.state.myBar)
     let bar = this.state.myBar
     this.props.shake(bar)
+    this.setState({
+      cocktails: true
+    })
   }
 
   render() {
@@ -57,7 +61,7 @@ class Items extends React.Component {
           <div>
             <h1>Cocktails:</h1>
             {this.props.cocktails.map(cocktail => {
-              return <li key="cocktail">{cocktail}</li>
+              return <li key={cocktail}>{cocktail}</li>
             })}
           </div>
         ) : (
@@ -98,7 +102,7 @@ class Items extends React.Component {
 
 const mapState = state => ({
   items: state.items,
-  cocktials: state.cocktails
+  cocktails: state.cocktails
 })
 
 const mapDispatch = dispatch => ({
