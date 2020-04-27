@@ -13,21 +13,25 @@ class SingleCocktail extends React.Component {
       <div id="cocktail_container">
         <h1>{this.props.cocktail.name}</h1>
 
-        <div>
-          <h3>Ingredients:</h3>
-          <ul>
-            {this.props.cocktail.items ? (
-              this.props.cocktail.items.map(item => {
-                return (
-                  <li key={item.id}>
-                    {item.recipeitem.amount} {item.name}
-                  </li>
-                )
-              })
-            ) : (
-              <div />
-            )}
-          </ul>
+        <div id="ingreds">
+          <img id="cocktail_img" src={this.props.cocktail.imageURL} />
+
+          <div>
+            <h3>Ingredients:</h3>
+            <ul>
+              {this.props.cocktail.items ? (
+                this.props.cocktail.items.map(item => {
+                  return (
+                    <li key={item.id}>
+                      {item.recipeitem.amount} {item.name}
+                    </li>
+                  )
+                })
+              ) : (
+                <div />
+              )}
+            </ul>
+          </div>
         </div>
 
         <div>

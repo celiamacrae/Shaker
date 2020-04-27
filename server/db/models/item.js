@@ -6,7 +6,7 @@ const Item = db.define('item', {
     type: Sequelize.STRING
   },
   category: {
-    type: Sequelize.ENUM(['liquor', 'accesory', 'ingredient'])
+    type: Sequelize.ENUM(['liquor', 'accessory', 'ingredient'])
   }
 })
 

@@ -6,8 +6,15 @@ import items from './items'
 import recipes from './recipes'
 import cocktails from './cocktails'
 import singleCocktail from './single_cocktail'
+import myBar from './mybar'
 
-const reducer = combineReducers({items, recipes, cocktails, singleCocktail})
+const reducer = combineReducers({
+  items,
+  recipes,
+  cocktails,
+  singleCocktail,
+  myBar
+})
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )

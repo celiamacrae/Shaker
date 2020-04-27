@@ -2,14 +2,13 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchItems} from '../store/items'
 import {shake} from '../store/cocktails'
+import {addToBar, removeFromBar} from '../store/mybar'
 import {Link} from 'react-router-dom'
 
 class Items extends React.Component {
   constructor() {
     super()
-    this.state = {
-      myBar: ['Ice']
-    }
+    this.state = {}
     this.addToBar = this.addToBar.bind(this)
     this.removeFromBar = this.removeFromBar.bind(this)
     this.shakeItUp = this.shakeItUp.bind(this)
@@ -20,11 +19,13 @@ class Items extends React.Component {
   }
 
   addToBar(event) {
-    if (!this.state.myBar.includes(event.target.value)) {
-      this.setState({
-        myBar: [...this.state.myBar, event.target.value]
-      })
+    if (!this.props.myBar.includes(event.target.value)) {
+      this.props.add(event.target.value)
     }
+  }
+
+  removeFromBar(event) {
+    this.props.remove(event.target.value)
   }
 
   urlify(name) {
@@ -35,76 +36,76 @@ class Items extends React.Component {
     return words
   }
 
-  removeFromBar(event) {
-    this.setState({
-      myBar: this.state.myBar.filter(item => item !== event.target.value)
-    })
-  }
-
   shakeItUp() {
     // console.log("SHAKER", this.state.myBar)
-    let bar = this.state.myBar
+    let bar = this.props.myBar
     this.props.shake(bar)
-    this.setState({
-      cocktails: true
-    })
   }
 
   render() {
     console.log('here', this.props)
     return (
       <div>
-        <div>
-          <h1>MY BAR:</h1>
-          <ul>
-            {this.state.myBar.map(item => {
-              return <li key={item}>{item}</li>
-            })}
-          </ul>
-          <button type="submit" onClick={this.shakeItUp}>
-            SHAKE
-          </button>
+        <div id="bar_cocktails">
+          <div id="bar">
+            <h1>MY BAR:</h1>
+            <ul>
+              {this.props.myBar.map(item => {
+                return <li key={item}>{item}</li>
+              })}
+            </ul>
+            <button type="submit" onClick={this.shakeItUp}>
+              SHAKE IT UP
+            </button>
+          </div>
+
+          {this.props.cocktails ? (
+            <div>
+              <h1>Cocktails:</h1>
+              {this.props.cocktails.map(cocktail => {
+                return (
+                  <div key={cocktail}>
+                    <Link to={`/recipes/${this.urlify(cocktail)}`}>
+                      {cocktail}
+                    </Link>
+                  </div>
+                )
+              })}
+            </div>
+          ) : (
+            <div />
+          )}
         </div>
 
-        {this.props.cocktails ? (
-          <div>
-            <h1>Cocktails:</h1>
-            {this.props.cocktails.map(cocktail => {
-              return (
-                <div key={cocktail}>
-                  <Link to={`/recipes/${this.urlify(cocktail)}`}>
-                    {cocktail}
-                  </Link>
-                </div>
-              )
-            })}
-          </div>
-        ) : (
-          <div />
-        )}
+        <br />
 
         <div>
-          <h1>ITEMS:</h1>
+          <h1>Cocktail Ingredients</h1>
           <div id="allitems">
             {this.props.items.map(item => {
               return (
-                <div className="item" key={item.id}>
+                <div className={`item ${item.category}`} key={item.id}>
                   <p className="itemName">{item.name}</p>
-                  <button
-                    value={item.name}
-                    type="submit"
-                    // key={item.id}
-                    onClick={this.addToBar}
-                  >
-                    ADD TO BAR
-                  </button>
-                  <button
-                    value={item.name}
-                    type="submit"
-                    onClick={this.removeFromBar}
-                  >
-                    REMOVE FROM BAR
-                  </button>
+
+                  <div id="itembuttons">
+                    <button
+                      className="itembutton"
+                      value={item.name}
+                      type="submit"
+                      // key={item.id}
+                      onClick={this.addToBar}
+                    >
+                      ADD TO BAR
+                    </button>
+                    <button
+                      className="itembutton"
+                      value={item.name}
+                      type="submit"
+                      onClick={this.removeFromBar}
+                    >
+                      REMOVE
+                    </button>
+                  </div>
                 </div>
               )
             })}
@@ -117,12 +118,15 @@ class Items extends React.Component {
 
 const mapState = state => ({
   items: state.items,
-  cocktails: state.cocktails
+  cocktails: state.cocktails,
+  myBar: state.myBar
 })
 
 const mapDispatch = dispatch => ({
   fetchItems: () => dispatch(fetchItems()),
-  shake: bar => dispatch(shake(bar))
+  shake: bar => dispatch(shake(bar)),
+  add: item => dispatch(addToBar(item)),
+  remove: item => dispatch(removeFromBar(item))
 })
 
 export default connect(mapState, mapDispatch)(Items)

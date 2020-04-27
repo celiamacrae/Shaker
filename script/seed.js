@@ -53,9 +53,9 @@ async function seed() {
 
   let cocktailShaker = await Item.create({
     name: 'Cocktail Shaker',
-    category: 'accesory'
+    category: 'accessory'
   })
-  let blender = await Item.create({name: 'Blender', category: 'accesory'})
+  let blender = await Item.create({name: 'Blender', category: 'accessory'})
 
   let accessories = [cocktailShaker, blender]
 
@@ -74,7 +74,7 @@ async function seed() {
     description:
       'Fill a glass with ice and add 2oz of vodka. $Top with club soda. $Optionally: add a squeeze of lime or lemon.',
     imageURL:
-      'https://cdn.diffords.com/contrib/stock-images/2017/8/58/20172836263fe04fe0dd45f6cdd56f068883.jpg'
+      'https://www.tasteofhome.com/wp-content/uploads/2019/07/cocktail-shutterstock_422747731.jpg'
   })
   let vodka_on_the_rocks = await Recipe.create({
     name: 'Vodka on the Rocks',
