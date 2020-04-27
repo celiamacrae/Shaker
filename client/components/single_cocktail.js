@@ -8,21 +8,40 @@ class SingleCocktail extends React.Component {
   }
 
   render() {
-    // console.log(this.props.cocktail)
+    console.log(this.props.cocktail)
     return (
-      <div>
+      <div id="cocktail_container">
         <h1>{this.props.cocktail.name}</h1>
 
-        <h3>Recipe:</h3>
-        {this.props.cocktail.description ? (
+        <div>
+          <h3>Ingredients:</h3>
           <ul>
-            {this.props.cocktail.description.split('$').map(line => {
-              return <li>{line}</li>
-            })}
+            {this.props.cocktail.items ? (
+              this.props.cocktail.items.map(item => {
+                return (
+                  <li key={item.id}>
+                    {item.recipeitem.amount} {item.name}
+                  </li>
+                )
+              })
+            ) : (
+              <div />
+            )}
           </ul>
-        ) : (
-          <h3 />
-        )}
+        </div>
+
+        <div>
+          <h3>Recipe:</h3>
+          {this.props.cocktail.description ? (
+            <ul>
+              {this.props.cocktail.description.split('$').map(line => {
+                return <li>{line}</li>
+              })}
+            </ul>
+          ) : (
+            <h3 />
+          )}
+        </div>
       </div>
     )
   }

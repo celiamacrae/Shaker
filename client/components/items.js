@@ -2,17 +2,18 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchItems} from '../store/items'
 import {shake} from '../store/cocktails'
+import {Link} from 'react-router-dom'
 
 class Items extends React.Component {
   constructor() {
     super()
     this.state = {
-      myBar: ['Ice'],
-      cocktails: false
+      myBar: ['Ice']
     }
     this.addToBar = this.addToBar.bind(this)
     this.removeFromBar = this.removeFromBar.bind(this)
     this.shakeItUp = this.shakeItUp.bind(this)
+    this.urlify = this.urlify.bind(this)
   }
   componentDidMount() {
     this.props.fetchItems()
@@ -24,6 +25,14 @@ class Items extends React.Component {
         myBar: [...this.state.myBar, event.target.value]
       })
     }
+  }
+
+  urlify(name) {
+    let words = name
+      .toLowerCase()
+      .split(' ')
+      .join('_')
+    return words
   }
 
   removeFromBar(event) {
@@ -61,7 +70,13 @@ class Items extends React.Component {
           <div>
             <h1>Cocktails:</h1>
             {this.props.cocktails.map(cocktail => {
-              return <li key={cocktail}>{cocktail}</li>
+              return (
+                <div key={cocktail}>
+                  <Link to={`/recipes/${this.urlify(cocktail)}`}>
+                    {cocktail}
+                  </Link>
+                </div>
+              )
             })}
           </div>
         ) : (

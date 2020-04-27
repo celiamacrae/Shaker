@@ -10,6 +10,9 @@ const Recipe = db.define('recipe', {
   },
   description: {
     type: Sequelize.TEXT
+  },
+  imageURL: {
+    type: Sequelize.STRING
   }
 })
 
