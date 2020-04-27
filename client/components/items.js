@@ -80,7 +80,7 @@ class Items extends React.Component {
         <br />
 
         <div>
-          <h1>Cocktail Ingredients</h1>
+          <h1 id="ingredz">Cocktail Ingredients</h1>
           <div id="allitems">
             {this.props.items.map(item => {
               return (

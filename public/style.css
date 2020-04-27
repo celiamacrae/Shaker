@@ -15,7 +15,7 @@ form div {
   display: inline-block;
 }
 
-/* NAV & TITLE */
+/* ~~~ NAV & TITLE ~~~ */
 
 nav a {
   display: inline-block;
@@ -33,7 +33,15 @@ nav a {
   justify-content: center;
   flex-wrap: wrap;
 }
-/* ITEMS */
+
+/* ~~~ ITEMS ~~~ */
+
+#allitems {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+} /*flex box container for all items */
 
 .item {
   display: flex;
@@ -46,50 +54,48 @@ nav a {
   height: 105px;
   border-radius: 25%;
   padding: 5px;
-}
-
-.liquor {
-  background-color: antiquewhite;
-}
-
-.accessory {
-  background-color: #f9e7e0;
-}
-
-.ingredient {
-  background-color: #fbf7dc;
-}
-
-#allitems {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+} /*flex box container for single item*/
 
 .itemName {
   text-align: center;
-}
+} /*name of single item in item flex box*/
 
-.itembutton {
-  width: 85px;
-  align-self: center;
-}
+.liquor {
+  background-color: antiquewhite;
+} /* for item boxes with category === liquor */
+
+.accessory {
+  background-color: #f9e7e0;
+} /* for item boxes with category === accessory */
+
+.ingredient {
+  background-color: #fbf7dc;
+} /* for item boxes with category === ingredient */
+
+#ingredz {
+  text-align: center;
+} /* for h1 cocktail ingredients label*/
 
 #itembuttons {
   display: flex;
   flex-direction: column;
-}
+} /*flex box container with add to bar/ remove from bar buttons */
+
+.itembutton {
+  width: 85px;
+  align-self: center;
+} /*single button (add/remove from bar)*/
 
 #bar_cocktails {
   display: flex;
   flex-direction: row;
-}
+} /*flex box container with my bar and possible cocktails */
 
 #bar {
   margin: 0px 200px 0px 0px;
-}
+} /*my bar*/
 
-/* SINGLE COCKTAIL */
+/* ~~~ SINGLE COCKTAIL ~~~ */
 
 #cocktail_container {
   display: flex;
