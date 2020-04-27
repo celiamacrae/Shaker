@@ -30,9 +30,9 @@ async function seed() {
     Recipe.create({
       name: 'Vodka on the Rocks',
       description:
-        'Fill a rocks glass to the top with ice cubes. Pour in 2oz of vodka. Optionally: Garnish with lemon Zest.'
+        'Fill a rocks glass to the top with ice cubes. $Pour in 2oz of vodka. $Optionally: Garnish with lemon Zest.'
     }),
-    Recipe.create({name: 'Tequila'})
+    Recipe.create({name: 'Tequila on the Rocks'})
   ])
 
   console.log(`seeded ${recipes.length} recipes`)
