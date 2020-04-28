@@ -17,9 +17,6 @@ class Shaker extends React.Component {
     this.urlify = this.urlify.bind(this)
     this.shake2 = this.shake2.bind(this)
   }
-  // componentDidMount() {
-  //   this.props.fetchItems()
-  // }
 
   addToBar(event) {
     if (!this.props.myBar.includes(event.target.value)) {
