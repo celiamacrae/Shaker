@@ -56,128 +56,34 @@ class Items extends React.Component {
     console.log('HERE>>>>', this.state)
     return (
       <div>
-        <div id="bar_cocktails">
-          <div id="bar">
-            <h1>MY BAR</h1>
-            <ul>
-              {this.props.myBar.map(item => {
-                return (
-                  <div id="bar_item" key={item}>
-                    <li>{item}</li>
+        <h1 id="ingredz">Cocktail Ingredients</h1>
+        <div id="allitems">
+          {this.props.items.map(item => {
+            return (
+              <div className={`item ${item.category}`} key={item.id}>
+                <p className="itemName">{item.name}</p>
 
-                    <br />
-                    <button
-                      value={item}
-                      type="submit"
-                      onClick={this.removeFromBar}
-                    >
-                      x
-                    </button>
-                  </div>
-                )
-              })}
-            </ul>
-            {/* {this.props.myBar.length > 0 ? (
-              <button id="shake" type="submit" onClick={this.shakeItUp}>
-                SHAKE IT UP
-              </button>
-            ) : (
-              <p />
-            )} */}
-          </div>
-
-          {this.state.shake ? (
-            <div id="dawg">
-              <br />
-              <img
-                id="dog"
-                src="https://media2.giphy.com/media/3o85xomqdEz6L0wS8o/200.gif"
-              />
-              <br />
-              {this.props.myBar.length > 0 ? (
-                <button id="shake" type="submit" onClick={this.shakeItUp}>
-                  SHAKE IT UP
-                </button>
-              ) : (
-                <p />
-              )}
-            </div>
-          ) : (
-            <div id="dawg">
-              <br />
-              <img id="dog" src="https://i.imgur.com/fzOHzri.png" />
-              <br />
-              {this.props.myBar.length > 0 ? (
-                <button id="shake" type="submit" onClick={this.shakeItUp}>
-                  SHAKE IT UP
-                </button>
-              ) : (
-                <p />
-              )}
-            </div>
-          )}
-
-          {this.props.cocktails ? (
-            <div id="goodcocktials">
-              <h1>Cocktails</h1>
-              {this.props.cocktails.map(cocktail => {
-                if (this.props.cocktails.length > 1) {
-                  // if (this.props.cokctails.name !== 'Water') {
-                  return (
-                    <div key={cocktail}>
-                      <Link to={`/recipes/${this.urlify(cocktail)}`}>
-                        {cocktail}
-                      </Link>
-                    </div>
-                  )
-                } else {
-                  return (
-                    <div key={cocktail}>
-                      <Link to={`/recipes/${this.urlify(cocktail)}`}>
-                        {cocktail}
-                      </Link>
-                    </div>
-                  )
-                }
-              })}
-            </div>
-          ) : (
-            <div />
-          )}
-        </div>
-
-        <br />
-
-        <div>
-          <h1 id="ingredz">Cocktail Ingredients</h1>
-          <div id="allitems">
-            {this.props.items.map(item => {
-              return (
-                <div className={`item ${item.category}`} key={item.id}>
-                  <p className="itemName">{item.name}</p>
-
-                  <div id="itembuttons">
-                    <button
-                      className="itembutton"
-                      value={item.name}
-                      type="submit"
-                      onClick={this.addToBar}
-                    >
-                      ADD TO BAR
-                    </button>
-                    <button
-                      className="itembutton"
-                      value={item.name}
-                      type="submit"
-                      onClick={this.removeFromBar}
-                    >
-                      REMOVE
-                    </button>
-                  </div>
+                <div id="itembuttons">
+                  <button
+                    className="itembutton"
+                    value={item.name}
+                    type="submit"
+                    onClick={this.addToBar}
+                  >
+                    ADD TO BAR
+                  </button>
+                  <button
+                    className="itembutton"
+                    value={item.name}
+                    type="submit"
+                    onClick={this.removeFromBar}
+                  >
+                    REMOVE
+                  </button>
                 </div>
-              )
-            })}
-          </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     )

@@ -88,6 +88,8 @@ nav a {
   margin: 2px;
   border-style: none;
   font-family: 'Courier New', Courier, monospace;
+  /* background-color: */
+  /* color: white; */
 } /*single button (add/remove from bar)*/
 
 #bar_cocktails {

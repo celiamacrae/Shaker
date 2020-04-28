@@ -9,7 +9,7 @@ const Navbar = () => (
       <div id="nav">
         {/* The navbar will show these links before you log in */}
         <Link to="/home">Home</Link>
-        <Link to="/items">Shake</Link>
+        <Link to="/shaker">Shake</Link>
         <Link to="/recipes">Recipes</Link>
       </div>
     </nav>

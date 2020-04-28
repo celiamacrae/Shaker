@@ -115,7 +115,7 @@ var App = function App() {
 /*!************************************!*\
   !*** ./client/components/index.js ***!
   \************************************/
-/*! exports provided: Navbar, UserHome, Items, Recipes, SingleCocktail */
+/*! exports provided: Navbar, UserHome, Items, Recipes, SingleCocktail, Shaker */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -135,11 +135,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _single_cocktail__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./single_cocktail */ "./client/components/single_cocktail.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SingleCocktail", function() { return _single_cocktail__WEBPACK_IMPORTED_MODULE_4__["default"]; });
 
+/* harmony import */ var _shaker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./shaker */ "./client/components/shaker.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Shaker", function() { return _shaker__WEBPACK_IMPORTED_MODULE_5__["default"]; });
+
 /**
  * `components/index.js` exists simply as a 'central export' for our components.
  * This way, we can import all of our components from the same place, rather than
  * having to figure out which file they belong to!
  */
+
 
 
 
@@ -263,55 +267,7 @@ function (_React$Component) {
 
       console.log('here', this.props);
       console.log('HERE>>>>', this.state);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "bar_cocktails"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "bar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "MY BAR"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.myBar.map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          id: "bar_item",
-          key: item
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, item), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          value: item,
-          type: "submit",
-          onClick: _this3.removeFromBar
-        }, "x"));
-      }))), this.state.shake ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "dawg"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        id: "dog",
-        src: "https://media2.giphy.com/media/3o85xomqdEz6L0wS8o/200.gif"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.myBar.length > 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "shake",
-        type: "submit",
-        onClick: this.shakeItUp
-      }, "SHAKE IT UP") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "dawg"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        id: "dog",
-        src: "https://i.imgur.com/fzOHzri.png"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.myBar.length > 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "shake",
-        type: "submit",
-        onClick: this.shakeItUp
-      }, "SHAKE IT UP") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)), this.props.cocktails ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "goodcocktials"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Cocktails"), this.props.cocktails.map(function (cocktail) {
-        if (_this3.props.cocktails.length > 1) {
-          // if (this.props.cokctails.name !== 'Water') {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            key: cocktail
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
-            to: "/recipes/".concat(_this3.urlify(cocktail))
-          }, cocktail));
-        } else {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            key: cocktail
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
-            to: "/recipes/".concat(_this3.urlify(cocktail))
-          }, cocktail));
-        }
-      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         id: "ingredz"
       }, "Cocktail Ingredients"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "allitems"
@@ -334,7 +290,7 @@ function (_React$Component) {
           type: "submit",
           onClick: _this3.removeFromBar
         }, "REMOVE")));
-      }))));
+      })));
     }
   }]);
 
@@ -398,7 +354,7 @@ var Navbar = function Navbar() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/home"
   }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/items"
+    to: "/shaker"
   }, "Shake"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/recipes"
   }, "Recipes"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null));
@@ -508,6 +464,211 @@ var mapDispatch = function mapDispatch(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapState, mapDispatch)(Recipes));
+
+/***/ }),
+
+/***/ "./client/components/shaker.js":
+/*!*************************************!*\
+  !*** ./client/components/shaker.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _store_items__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/items */ "./client/store/items.js");
+/* harmony import */ var _store_cocktails__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/cocktails */ "./client/store/cocktails.js");
+/* harmony import */ var _store_mybar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/mybar */ "./client/store/mybar.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./items */ "./client/components/items.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+
+
+var Shaker =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Shaker, _React$Component);
+
+  function Shaker() {
+    var _this;
+
+    _classCallCheck(this, Shaker);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Shaker).call(this));
+    _this.state = {
+      shake: false
+    };
+    _this.addToBar = _this.addToBar.bind(_assertThisInitialized(_this));
+    _this.removeFromBar = _this.removeFromBar.bind(_assertThisInitialized(_this));
+    _this.shakeItUp = _this.shakeItUp.bind(_assertThisInitialized(_this));
+    _this.urlify = _this.urlify.bind(_assertThisInitialized(_this));
+    _this.shake2 = _this.shake2.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Shaker, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchItems();
+    }
+  }, {
+    key: "addToBar",
+    value: function addToBar(event) {
+      if (!this.props.myBar.includes(event.target.value)) {
+        this.props.add(event.target.value);
+      }
+    }
+  }, {
+    key: "removeFromBar",
+    value: function removeFromBar(event) {
+      this.props.remove(event.target.value);
+    }
+  }, {
+    key: "urlify",
+    value: function urlify(name) {
+      var words = name.toLowerCase().split(' ').join('_');
+      return words;
+    }
+  }, {
+    key: "shakeItUp",
+    value: function shakeItUp() {
+      var _this2 = this;
+
+      this.props.clearCocktails();
+      this.setState({
+        shake: true
+      });
+      setTimeout(function () {
+        return _this2.shake2();
+      }, 2000);
+    }
+  }, {
+    key: "shake2",
+    value: function shake2() {
+      var bar = this.props.myBar;
+      this.props.shake(bar);
+      this.setState({
+        shake: false
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      console.log('here', this.props);
+      console.log('HERE>>>>', this.state);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "bar_cocktails"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "bar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "MY BAR"), this.props.myBar.map(function (item) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "bar_item",
+          key: item
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, item), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          value: item,
+          type: "submit",
+          onClick: _this3.removeFromBar
+        }, "x"));
+      })), this.state.shake ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "dawg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        id: "dog",
+        src: "https://media2.giphy.com/media/3o85xomqdEz6L0wS8o/200.gif"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.myBar.length > 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "shake",
+        type: "submit",
+        onClick: this.shakeItUp
+      }, "SHAKE IT UP") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "dawg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        id: "dog",
+        src: "https://i.imgur.com/fzOHzri.png"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.myBar.length > 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "shake",
+        type: "submit",
+        onClick: this.shakeItUp
+      }, "SHAKE IT UP") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)), this.props.cocktails ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "goodcocktials"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Cocktails"), this.props.cocktails.map(function (cocktail) {
+        if (_this3.props.cocktails.length > 1) {
+          if (cocktail !== 'Water') {
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+              key: cocktail
+            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+              to: "/recipes/".concat(_this3.urlify(cocktail))
+            }, cocktail));
+          }
+        } else {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            key: cocktail
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+            to: "/recipes/".concat(_this3.urlify(cocktail))
+          }, cocktail));
+        }
+      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_items__WEBPACK_IMPORTED_MODULE_6__["default"], null));
+    }
+  }]);
+
+  return Shaker;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+var mapState = function mapState(state) {
+  return {
+    items: state.items,
+    cocktails: state.cocktails,
+    myBar: state.myBar
+  };
+};
+
+var mapDispatch = function mapDispatch(dispatch) {
+  return {
+    fetchItems: function fetchItems() {
+      return dispatch(Object(_store_items__WEBPACK_IMPORTED_MODULE_2__["fetchItems"])());
+    },
+    shake: function shake(bar) {
+      return dispatch(Object(_store_cocktails__WEBPACK_IMPORTED_MODULE_3__["shake"])(bar));
+    },
+    clearCocktails: function clearCocktails() {
+      return dispatch(Object(_store_cocktails__WEBPACK_IMPORTED_MODULE_3__["clearCocktails"])());
+    },
+    add: function add(item) {
+      return dispatch(Object(_store_mybar__WEBPACK_IMPORTED_MODULE_4__["addToBar"])(item));
+    },
+    remove: function remove(item) {
+      return dispatch(Object(_store_mybar__WEBPACK_IMPORTED_MODULE_4__["removeFromBar"])(item));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapState, mapDispatch)(Shaker));
 
 /***/ }),
 
@@ -749,6 +910,9 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/items",
         component: _components__WEBPACK_IMPORTED_MODULE_4__["Items"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/shaker",
+        component: _components__WEBPACK_IMPORTED_MODULE_4__["Shaker"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/home",
         component: _components__WEBPACK_IMPORTED_MODULE_4__["UserHome"]
