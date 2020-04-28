@@ -78,7 +78,7 @@ class Items extends React.Component {
               })}
             </ul>
             {this.props.myBar.length > 0 ? (
-              <button type="submit" onClick={this.shakeItUp}>
+              <button id="shake" type="submit" onClick={this.shakeItUp}>
                 SHAKE IT UP
               </button>
             ) : (
@@ -97,7 +97,7 @@ class Items extends React.Component {
           )}
 
           {this.props.cocktails ? (
-            <div>
+            <div id="goodcocktials">
               <h1>Cocktails</h1>
               {this.props.cocktails.map(cocktail => {
                 return (

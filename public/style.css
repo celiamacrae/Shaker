@@ -89,8 +89,36 @@ nav a {
 #bar_cocktails {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
 } /*flex box container with my bar and possible cocktails */
+
+#dawg {
+  width: 250px;
+  /* margin: 10px; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+} /* #1/3 */
+#goodcocktials {
+  width: 250px;
+  /* margin: 10px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} /* #2/3 */
+#bar {
+  width: 250px;
+  /* margin: 10px; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+#shake {
+  width: 100px;
+}
 
 /* #bar {
   margin: 0px 200px 0px 0px;
