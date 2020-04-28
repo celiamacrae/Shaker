@@ -1,3 +1,5 @@
+const {Item} = require('../../server/db/models')
+
 const ice = {name: 'Ice', category: 'ingredient'}
 const clubSoda = {
   name: 'Club Soda',
@@ -18,20 +20,20 @@ const salt = {name: 'Salt', category: 'ingredient'}
 const cream = {name: 'Heavy Cream', category: 'ingredient'}
 const mint = {name: 'Mint Leaves', category: 'ingredient'}
 
-const ingredients = [
-  ice,
-  clubSoda,
-  lemon,
-  lime,
-  orange,
-  gingerBeer,
-  bitters,
-  sugar,
-  tonic,
-  syrup,
-  salt,
-  cream,
-  mint
-]
+async function seedIngredients() {
+  await Item.create(bitters)
+  await Item.create(clubSoda)
+  await Item.create(cream)
+  await Item.create(gingerBeer)
+  await Item.create(ice)
+  await Item.create(lemon)
+  await Item.create(lime)
+  await Item.create(mint)
+  await Item.create(orange)
+  await Item.create(salt)
+  await Item.create(sugar)
+  await Item.create(syrup)
+  await Item.create(tonic)
+}
 
-module.exports = ingredients
+module.exports = {seedIngredients}

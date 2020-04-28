@@ -1,3 +1,5 @@
+const {Item} = require('../../server/db/models')
+
 const tequila = {name: 'Tequila', category: 'liquor'}
 const vodka = {name: 'Vodka', category: 'liquor'}
 const rum = {name: 'Rum', category: 'liquor'}
@@ -17,38 +19,19 @@ const coffeeLiqueur = {
   category: 'liquor'
 }
 
-const liquor = [
-  tequila,
-  vodka,
-  rum,
-  gin,
-  whiskey,
-  bourbon,
-  champagne,
-  campari,
-  vermouth,
-  orangeLiqueur,
-  cognac,
-  coffeeLiqueur
-]
+async function seedLiquor() {
+  await Item.create(bourbon)
+  await Item.create(campari)
+  await Item.create(champagne)
+  await Item.create(coffeeLiqueur)
+  await Item.create(cognac)
+  await Item.create(gin)
+  await Item.create(orangeLiqueur)
+  await Item.create(rum)
+  await Item.create(tequila)
+  await Item.create(vermouth)
+  await Item.create(vodka)
+  await Item.create(whiskey)
+}
 
-module.exports = liquor
-
-// let tequila = await Item.create({name: 'Tequila', category: 'liquor'})
-// let vodka = await Item.create({name: 'Vodka', category: 'liquor'})
-// let rum = await Item.create({name: 'Rum', category: 'liquor'})
-// let gin = await Item.create({name: 'Gin', category: 'liquor'})
-// let whiskey = await Item.create({name: 'Whiskey', category: 'liquor'})
-// let bourbon = await Item.create({name: 'Bourbon', category: 'liquor'})
-// let champagne = await Item.create({name: 'Champagne', category: 'liquor'})
-// let campari = await Item.create({name: 'Campari', category: 'liquor'})
-// let vermouth = await Item.create({name: 'Vermouth', category: 'liquor'})
-// let orange_liqueur = await Item.create({
-//   name: 'Orange Liqueur',
-//   category: 'liquor'
-// })
-// let cognac = await Item.create({name: 'Cognac', category: 'liquor'})
-// let coffee_liqueur = await Item.create({
-//   name: 'Coffee Liqueur',
-//   category: 'liquor'
-// })
+module.exports = seedLiquor

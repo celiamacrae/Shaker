@@ -1,13 +1,14 @@
-const liquor = require('./liquor')
-const ingredients = require('./ingredients')
-const accessories = require('./accessories')
-const recipes = require('./recipes')
-const recipeitems = require('./recipeItems')
+const seedLiquor = require('./liquor')
+const {seedIngredients} = require('./ingredients')
+// const {accessories} = require('./accessories')
+const {seedAccessories} = require('./accessories')
+const seedRecipes = require('./recipes')
+const seedRIs = require('./recipeItems')
 
 module.exports = {
-  liquor,
-  ingredients,
-  accessories,
-  recipes,
-  recipeitems
+  seedLiquor,
+  seedIngredients,
+  seedRecipes,
+  seedRIs,
+  seedAccessories
 }

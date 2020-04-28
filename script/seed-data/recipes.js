@@ -1,3 +1,5 @@
+const {Recipe} = require('../../server/db/models')
+
 const tequilaSoda = {
   name: 'Tequila Soda',
   description:
@@ -173,32 +175,32 @@ const americano = {
     'https://www.liquor.com/thmb/BeSLdsxQ2pCBDtYVK0Z2hOmDdAs=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2017__05__18075612__americano-720x720-article-50171f19cc644b05b8df563e06a647fd.jpg'
 }
 
-const recipes = [
-  tequilaSoda,
-  vodkaSoda,
-  vodkaOnTheRocks,
-  tequilaOnTheRocks,
-  moscowMule,
-  oldFashioned,
-  ginTonic,
-  daquiri,
-  whiskeySour,
-  darkStormy,
-  negroni,
-  ginMartini,
-  vodkaMartini,
-  manhattan,
-  sidecar,
-  ginGimlet,
-  vodkaGimlet,
-  margarita,
-  champagneCocktail,
-  whiteRussian,
-  mojito,
-  water,
-  whiskeyOnTheRocks,
-  bourbonOnTheRocks,
-  americano
-]
+async function seedRecipes() {
+  await Recipe.create(americano)
+  await Recipe.create(bourbonOnTheRocks)
+  await Recipe.create(champagneCocktail)
+  await Recipe.create(darkStormy)
+  await Recipe.create(daquiri)
+  await Recipe.create(ginTonic)
+  await Recipe.create(ginMartini)
+  await Recipe.create(ginGimlet)
+  await Recipe.create(manhattan)
+  await Recipe.create(margarita)
+  await Recipe.create(mojito)
+  await Recipe.create(moscowMule)
+  await Recipe.create(negroni)
+  await Recipe.create(oldFashioned)
+  await Recipe.create(sidecar)
+  await Recipe.create(tequilaOnTheRocks)
+  await Recipe.create(tequilaSoda)
+  await Recipe.create(vodkaGimlet)
+  await Recipe.create(vodkaMartini)
+  await Recipe.create(vodkaOnTheRocks)
+  await Recipe.create(vodkaSoda)
+  await Recipe.create(whiskeyOnTheRocks)
+  await Recipe.create(whiskeySour)
+  await Recipe.create(whiteRussian)
+  await Recipe.create(water)
+}
 
-module.exports = recipes
+module.exports = seedRecipes

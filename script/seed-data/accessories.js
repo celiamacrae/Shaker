@@ -1,3 +1,5 @@
+const {Item} = require('../../server/db/models')
+
 const cocktailShaker = {
   name: 'Cocktail Shaker',
   category: 'accessory'
@@ -5,6 +7,10 @@ const cocktailShaker = {
 const blender = {name: 'Blender', category: 'accessory'}
 const muddler = {name: 'Muddler', category: 'accessory'}
 
-const accessories = [cocktailShaker, blender, muddler]
+async function seedAccessories() {
+  await Item.create(blender)
+  await Item.create(cocktailShaker)
+  await Item.create(muddler)
+}
 
-module.exports = accessories
+module.exports = {seedAccessories}
