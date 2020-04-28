@@ -5,6 +5,7 @@ import history from '../history'
  * ACTION TYPES
  */
 const SHAKE = 'SHAKE'
+const CLEAR_COCKTAILS = 'CLEAR_COCKTAILS'
 
 /**
  * INITIAL STATE
@@ -15,6 +16,7 @@ const defaultCocktails = []
  * ACTION CREATORS
  */
 const shakeCocktails = cocktails => ({type: SHAKE, cocktails})
+export const clearCocktails = () => ({type: CLEAR_COCKTAILS})
 
 /**
  * THUNK CREATORS
@@ -74,6 +76,8 @@ export default function(state = defaultCocktails, action) {
   switch (action.type) {
     case SHAKE:
       return action.cocktails
+    case CLEAR_COCKTAILS:
+      return []
     default:
       return state
   }

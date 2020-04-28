@@ -1,18 +1,21 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchItems} from '../store/items'
-import {shake} from '../store/cocktails'
+import {shake, clearCocktails} from '../store/cocktails'
 import {addToBar, removeFromBar} from '../store/mybar'
 import {Link} from 'react-router-dom'
 
 class Items extends React.Component {
   constructor() {
     super()
-    this.state = {}
+    this.state = {
+      shake: false
+    }
     this.addToBar = this.addToBar.bind(this)
     this.removeFromBar = this.removeFromBar.bind(this)
     this.shakeItUp = this.shakeItUp.bind(this)
     this.urlify = this.urlify.bind(this)
+    this.shake2 = this.shake2.bind(this)
   }
   componentDidMount() {
     this.props.fetchItems()
@@ -37,13 +40,20 @@ class Items extends React.Component {
   }
 
   shakeItUp() {
-    // console.log("SHAKER", this.state.myBar)
+    this.props.clearCocktails()
+    this.setState({shake: true})
+    setTimeout(() => this.shake2(), 2000)
+  }
+
+  shake2() {
     let bar = this.props.myBar
     this.props.shake(bar)
+    this.setState({shake: false})
   }
 
   render() {
     console.log('here', this.props)
+    console.log('HERE>>>>', this.state)
     return (
       <div>
         <div id="bar_cocktails">
@@ -75,6 +85,16 @@ class Items extends React.Component {
               <p />
             )}
           </div>
+
+          {this.state.shake ? (
+            <div id="dawg">
+              <img src="https://media2.giphy.com/media/3o85xomqdEz6L0wS8o/200.gif" />
+            </div>
+          ) : (
+            <div id="dawg">
+              <img src="https://i.imgur.com/fzOHzri.png" />
+            </div>
+          )}
 
           {this.props.cocktails ? (
             <div>
@@ -141,6 +161,7 @@ const mapState = state => ({
 const mapDispatch = dispatch => ({
   fetchItems: () => dispatch(fetchItems()),
   shake: bar => dispatch(shake(bar)),
+  clearCocktails: () => dispatch(clearCocktails()),
   add: item => dispatch(addToBar(item)),
   remove: item => dispatch(removeFromBar(item))
 })
