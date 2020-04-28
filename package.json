@@ -1,7 +1,7 @@
 {
   "name": "shaker",
   "version": "2.0.0",
-  "description": "Some boilerplate code to get you started - get shakin'!",
+  "description": "get shakin'!",
   "engines": {
     "node": ">= 7.0.0"
   },

@@ -250,6 +250,20 @@ async function seed() {
     imageURL:
       'https://images.everydayhealth.com/images/healthy-living/the-health-benefits-of-water-722x406.jpg?w=1110'
   })
+  let whiskey_on_the_rocks = await Recipe.create({
+    name: 'Whiskey on the Rocks',
+    description:
+      'Fill a rocks glass to the top with ice cubes. $Pour in 2oz of whiskey.',
+    imageURL:
+      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/701/molecular-reason-drink-whiskey-rocks-1503059521.jpg'
+  })
+  let bourbon_on_the_rocks = await Recipe.create({
+    name: 'Bourbon on the Rocks',
+    description:
+      'Fill a rocks glass to the top with ice cubes. $Pour in 2oz of bourbon whiskey.',
+    imageURL:
+      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/701/molecular-reason-drink-whiskey-rocks-1503059521.jpg'
+  })
 
   const recipes = [
     tequila_soda,
@@ -273,7 +287,8 @@ async function seed() {
     champagne_cocktail,
     white_russian,
     mojito,
-    water
+    water,
+    whiskey_on_the_rocks
   ]
 
   console.log(`seeded ${recipes.length} recipes`)
@@ -383,7 +398,14 @@ async function seed() {
     RecipeItem.create({recipeId: 21, itemId: 13}), //ice
     RecipeItem.create({recipeId: 21, itemId: 3, amount: '1.5 oz'}), //rum
     RecipeItem.create({recipeId: 21, itemId: 14, amount: '1/2 cup'}), //club soda
-    RecipeItem.create({recipeId: 21, itemId: 28}) //muddler
+    RecipeItem.create({recipeId: 21, itemId: 28}), //muddler
+    // WATER 22
+    //WHISKEY ON THE ROCKS 23
+    RecipeItem.create({recipeId: 23, itemId: 5, amount: '2 oz'}), //whiskey
+    RecipeItem.create({recipeId: 23, itemId: 13}), //ice
+    //BOURBON ON THE ROCKS 24
+    RecipeItem.create({recipeId: 24, itemId: 6, amount: '2 oz'}), //bourbon
+    RecipeItem.create({recipeId: 24, itemId: 13}) //ice
   ])
 }
 

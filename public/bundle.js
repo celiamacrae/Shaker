@@ -168,6 +168,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_mybar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/mybar */ "./client/store/mybar.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -200,9 +206,12 @@ function (_React$Component) {
     _classCallCheck(this, Items);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Items).call(this));
-    _this.state = {};
+    _this.state = {
+      search: ''
+    };
     _this.addToBar = _this.addToBar.bind(_assertThisInitialized(_this));
     _this.removeFromBar = _this.removeFromBar.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -224,33 +233,76 @@ function (_React$Component) {
       this.props.remove(event.target.value);
     }
   }, {
+    key: "handleChange",
+    value: function () {
+      var _handleChange = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee(event) {
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return this.setState(_defineProperty({}, event.target.name, event.target.value));
+
+              case 2:
+                console.log('this.state', this.state.search);
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function handleChange(_x) {
+        return _handleChange.apply(this, arguments);
+      }
+
+      return handleChange;
+    }()
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         id: "ingredz"
       }, "Cocktail Ingredients"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "search"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "search"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "Search:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "search",
+        type: "text",
+        value: this.state.search,
+        onChange: this.handleChange
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "allitems"
       }, this.props.items.map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "item ".concat(item.category),
-          key: item.id
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          className: "itemName"
-        }, item.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          id: "itembuttons"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "itembutton",
-          value: item.name,
-          type: "submit",
-          onClick: _this2.addToBar
-        }, "ADD TO BAR"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "itembutton",
-          value: item.name,
-          type: "submit",
-          onClick: _this2.removeFromBar
-        }, "REMOVE")));
+        if (item.name) {
+          if (item.name.toLowerCase().includes(_this2.state.search.toLowerCase())) {
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+              className: "item ".concat(item.category),
+              key: item.id
+            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+              className: "itemName"
+            }, item.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+              id: "itembuttons"
+            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+              className: "itembutton",
+              value: item.name,
+              type: "submit",
+              onClick: _this2.addToBar
+            }, "ADD TO BAR"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+              className: "itembutton",
+              value: item.name,
+              type: "submit",
+              onClick: _this2.removeFromBar
+            }, "REMOVE")));
+          }
+        }
       })));
     }
   }]);
@@ -482,10 +534,7 @@ function (_React$Component) {
     _this.urlify = _this.urlify.bind(_assertThisInitialized(_this));
     _this.shake2 = _this.shake2.bind(_assertThisInitialized(_this));
     return _this;
-  } // componentDidMount() {
-  //   this.props.fetchItems()
-  // }
-
+  }
 
   _createClass(Shaker, [{
     key: "addToBar",
