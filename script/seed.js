@@ -244,6 +244,12 @@ async function seed() {
     imageURL:
       'https://www.artofdrink.com/wp-content/uploads/2010/08/how-to-make-a-mojito-recipe-720x720.jpg'
   })
+  let water = await Recipe.create({
+    name: 'Water',
+    description: 'Drink. $More. $Water.',
+    imageURL:
+      'https://images.everydayhealth.com/images/healthy-living/the-health-benefits-of-water-722x406.jpg?w=1110'
+  })
 
   const recipes = [
     tequila_soda,
@@ -266,7 +272,8 @@ async function seed() {
     margarita,
     champagne_cocktail,
     white_russian,
-    mojito
+    mojito,
+    water
   ]
 
   console.log(`seeded ${recipes.length} recipes`)

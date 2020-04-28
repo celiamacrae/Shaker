@@ -48,7 +48,7 @@ nav a {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border: solid;
+  /* border: solid; */
   margin: 10px;
   width: 100px;
   height: 105px;
@@ -84,14 +84,22 @@ nav a {
 .itembutton {
   width: 85px;
   align-self: center;
+  border-radius: 5%;
+  margin: 2px;
+  border-style: none;
+  font-family: 'Courier New', Courier, monospace;
 } /*single button (add/remove from bar)*/
 
 #bar_cocktails {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 } /*flex box container with my bar and possible cocktails */
+
+#dog {
+  border-radius: 50%;
+}
 
 #dawg {
   width: 250px;
@@ -117,7 +125,11 @@ nav a {
   align-items: center;
 }
 #shake {
-  width: 100px;
+  width: 200px;
+  font-size: 100x;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 26px;
+  border-radius: 5%;
 }
 
 /* #bar {

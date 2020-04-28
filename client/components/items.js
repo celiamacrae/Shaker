@@ -77,22 +77,33 @@ class Items extends React.Component {
                 )
               })}
             </ul>
-            {this.props.myBar.length > 0 ? (
+            {/* {this.props.myBar.length > 0 ? (
               <button id="shake" type="submit" onClick={this.shakeItUp}>
                 SHAKE IT UP
               </button>
             ) : (
               <p />
-            )}
+            )} */}
           </div>
 
           {this.state.shake ? (
             <div id="dawg">
-              <img src="https://media2.giphy.com/media/3o85xomqdEz6L0wS8o/200.gif" />
+              <img
+                id="dog"
+                src="https://media2.giphy.com/media/3o85xomqdEz6L0wS8o/200.gif"
+              />
             </div>
           ) : (
             <div id="dawg">
-              <img src="https://i.imgur.com/fzOHzri.png" />
+              <img id="dog" src="https://i.imgur.com/fzOHzri.png" />
+              <br />
+              {this.props.myBar.length > 0 ? (
+                <button id="shake" type="submit" onClick={this.shakeItUp}>
+                  SHAKE IT UP
+                </button>
+              ) : (
+                <p />
+              )}
             </div>
           )}
 
@@ -100,13 +111,25 @@ class Items extends React.Component {
             <div id="goodcocktials">
               <h1>Cocktails</h1>
               {this.props.cocktails.map(cocktail => {
-                return (
-                  <div key={cocktail}>
-                    <Link to={`/recipes/${this.urlify(cocktail)}`}>
-                      {cocktail}
-                    </Link>
-                  </div>
-                )
+                if (this.props.cocktails.length > 1) {
+                  if (this.props.cokctails.name !== 'Water') {
+                    return (
+                      <div key={cocktail}>
+                        <Link to={`/recipes/${this.urlify(cocktail)}`}>
+                          {cocktail}
+                        </Link>
+                      </div>
+                    )
+                  }
+                } else {
+                  return (
+                    <div key={cocktail}>
+                      <Link to={`/recipes/${this.urlify(cocktail)}`}>
+                        {cocktail}
+                      </Link>
+                    </div>
+                  )
+                }
               })}
             </div>
           ) : (

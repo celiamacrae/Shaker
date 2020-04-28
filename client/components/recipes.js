@@ -29,15 +29,17 @@ class Recipes extends React.Component {
         <h1>RECIPES:</h1>
         <ol>
           {this.props.recipes.map(recipe => {
-            return (
-              <div key={recipe.id}>
-                <li>
-                  <Link to={`/recipes/${this.urlify(recipe.name)}`}>
-                    {recipe.name}
-                  </Link>
-                </li>
-              </div>
-            )
+            if (recipe.name !== 'Water') {
+              return (
+                <div key={recipe.id}>
+                  <li>
+                    <Link to={`/recipes/${this.urlify(recipe.name)}`}>
+                      {recipe.name}
+                    </Link>
+                  </li>
+                </div>
+              )
+            }
           })}
         </ol>
       </div>

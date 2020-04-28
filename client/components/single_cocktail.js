@@ -8,6 +8,7 @@ class SingleCocktail extends React.Component {
   }
 
   render() {
+    let key1 = 0
     console.log(this.props.cocktail)
     return (
       <div id="cocktail_container">
@@ -20,14 +21,20 @@ class SingleCocktail extends React.Component {
             <h3>Ingredients:</h3>
             <ul>
               {this.props.cocktail.items ? (
-                this.props.cocktail.items.map(item => {
-                  return (
-                    <li key={item.id}>
-                      {item.recipeitem.amount} {item.name}
-                    </li>
-                  )
-                })
+                this.props.cocktail.items.length > 0 ? (
+                  this.props.cocktail.items.map(item => {
+                    return (
+                      <li key={item.id}>
+                        {item.recipeitem.amount} {item.name}
+                      </li>
+                    )
+                  })
+                ) : (
+                  <li>None. Drink more water.</li>
+                )
               ) : (
+                // <h1>HEY</h1>
+                // <li>None</li>
                 <div />
               )}
             </ul>
@@ -39,11 +46,11 @@ class SingleCocktail extends React.Component {
           {this.props.cocktail.description ? (
             <ul>
               {this.props.cocktail.description.split('$').map(line => {
-                return <li>{line}</li>
+                return <li key={key1++}>{line}</li>
               })}
             </ul>
           ) : (
-            <h3 />
+            <p />
           )}
         </div>
       </div>
