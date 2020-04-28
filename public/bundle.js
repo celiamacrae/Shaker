@@ -294,13 +294,12 @@ function (_React$Component) {
         id: "goodcocktials"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Cocktails"), this.props.cocktails.map(function (cocktail) {
         if (_this3.props.cocktails.length > 1) {
-          if (_this3.props.cokctails.name !== 'Water') {
-            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-              key: cocktail
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
-              to: "/recipes/".concat(_this3.urlify(cocktail))
-            }, cocktail));
-          }
+          // if (this.props.cokctails.name !== 'Water') {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            key: cocktail
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+            to: "/recipes/".concat(_this3.urlify(cocktail))
+          }, cocktail));
         } else {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             key: cocktail

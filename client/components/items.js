@@ -112,15 +112,14 @@ class Items extends React.Component {
               <h1>Cocktails</h1>
               {this.props.cocktails.map(cocktail => {
                 if (this.props.cocktails.length > 1) {
-                  if (this.props.cokctails.name !== 'Water') {
-                    return (
-                      <div key={cocktail}>
-                        <Link to={`/recipes/${this.urlify(cocktail)}`}>
-                          {cocktail}
-                        </Link>
-                      </div>
-                    )
-                  }
+                  // if (this.props.cokctails.name !== 'Water') {
+                  return (
+                    <div key={cocktail}>
+                      <Link to={`/recipes/${this.urlify(cocktail)}`}>
+                        {cocktail}
+                      </Link>
+                    </div>
+                  )
                 } else {
                   return (
                     <div key={cocktail}>
