@@ -89,11 +89,22 @@ nav a {
 #bar_cocktails {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 } /*flex box container with my bar and possible cocktails */
 
-#bar {
+/* #bar {
   margin: 0px 200px 0px 0px;
-} /*my bar*/
+} */
+
+#bar_item {
+  display: flex;
+  flex-direction: row;
+}
+
+#lilx {
+  height: 10px;
+  width: 10px;
+}
 
 /* ~~~ SINGLE COCKTAIL ~~~ */
 

@@ -48,20 +48,37 @@ class Items extends React.Component {
       <div>
         <div id="bar_cocktails">
           <div id="bar">
-            <h1>MY BAR:</h1>
+            <h1>MY BAR</h1>
             <ul>
               {this.props.myBar.map(item => {
-                return <li key={item}>{item}</li>
+                return (
+                  <div id="bar_item" key={item}>
+                    <li>{item}</li>
+
+                    <br />
+                    <button
+                      value={item}
+                      type="submit"
+                      onClick={this.removeFromBar}
+                    >
+                      x
+                    </button>
+                  </div>
+                )
               })}
             </ul>
-            <button type="submit" onClick={this.shakeItUp}>
-              SHAKE IT UP
-            </button>
+            {this.props.myBar.length > 0 ? (
+              <button type="submit" onClick={this.shakeItUp}>
+                SHAKE IT UP
+              </button>
+            ) : (
+              <p />
+            )}
           </div>
 
           {this.props.cocktails ? (
             <div>
-              <h1>Cocktails:</h1>
+              <h1>Cocktails</h1>
               {this.props.cocktails.map(cocktail => {
                 return (
                   <div key={cocktail}>
@@ -92,7 +109,6 @@ class Items extends React.Component {
                       className="itembutton"
                       value={item.name}
                       type="submit"
-                      // key={item.id}
                       onClick={this.addToBar}
                     >
                       ADD TO BAR

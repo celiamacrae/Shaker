@@ -10,7 +10,7 @@ const REMOVE_FROM_BAR = 'REMOVE_FROM_BAR'
 /**
  * INITIAL STATE
  */
-const defaultBar = []
+const defaultBar = ['Ice']
 
 /**
  * ACTION CREATORS
