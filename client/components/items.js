@@ -88,13 +88,23 @@ class Items extends React.Component {
 
           {this.state.shake ? (
             <div id="dawg">
+              <br />
               <img
                 id="dog"
                 src="https://media2.giphy.com/media/3o85xomqdEz6L0wS8o/200.gif"
               />
+              <br />
+              {this.props.myBar.length > 0 ? (
+                <button id="shake" type="submit" onClick={this.shakeItUp}>
+                  SHAKE IT UP
+                </button>
+              ) : (
+                <p />
+              )}
             </div>
           ) : (
             <div id="dawg">
+              <br />
               <img id="dog" src="https://i.imgur.com/fzOHzri.png" />
               <br />
               {this.props.myBar.length > 0 ? (

@@ -278,12 +278,16 @@ function (_React$Component) {
         }, "x"));
       }))), this.state.shake ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "dawg"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "dog",
         src: "https://media2.giphy.com/media/3o85xomqdEz6L0wS8o/200.gif"
-      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.myBar.length > 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "shake",
+        type: "submit",
+        onClick: this.shakeItUp
+      }, "SHAKE IT UP") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "dawg"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "dog",
         src: "https://i.imgur.com/fzOHzri.png"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.myBar.length > 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

@@ -20,6 +20,7 @@ form div {
 nav a {
   display: inline-block;
   margin: 1em;
+  color: black;
 }
 
 #site_title {
@@ -61,16 +62,15 @@ nav a {
 } /*name of single item in item flex box*/
 
 .liquor {
-  background-color: antiquewhite;
+  /* background-color: #F8F8F8 */
+  background-color: #e8e8e8;
 } /* for item boxes with category === liquor */
-
-.accessory {
-  background-color: #f9e7e0;
-} /* for item boxes with category === accessory */
-
 .ingredient {
-  background-color: #fbf7dc;
+  background-color: #c8c8c8;
 } /* for item boxes with category === ingredient */
+.accessory {
+  background-color: #a8a8a8;
+} /* for item boxes with category === accessory */
 
 #ingredz {
   text-align: center;
