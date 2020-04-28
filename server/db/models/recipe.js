@@ -12,7 +12,7 @@ const Recipe = db.define('recipe', {
     type: Sequelize.TEXT
   },
   imageURL: {
-    type: Sequelize.STRING
+    type: Sequelize.TEXT
   }
 })
 
