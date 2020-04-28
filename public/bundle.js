@@ -165,9 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _store_items__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/items */ "./client/store/items.js");
-/* harmony import */ var _store_cocktails__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/cocktails */ "./client/store/cocktails.js");
-/* harmony import */ var _store_mybar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/mybar */ "./client/store/mybar.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _store_mybar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/mybar */ "./client/store/mybar.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -191,8 +189,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
-
 var Items =
 /*#__PURE__*/
 function (_React$Component) {
@@ -204,14 +200,9 @@ function (_React$Component) {
     _classCallCheck(this, Items);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Items).call(this));
-    _this.state = {
-      shake: false
-    };
+    _this.state = {};
     _this.addToBar = _this.addToBar.bind(_assertThisInitialized(_this));
     _this.removeFromBar = _this.removeFromBar.bind(_assertThisInitialized(_this));
-    _this.shakeItUp = _this.shakeItUp.bind(_assertThisInitialized(_this));
-    _this.urlify = _this.urlify.bind(_assertThisInitialized(_this));
-    _this.shake2 = _this.shake2.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -233,40 +224,10 @@ function (_React$Component) {
       this.props.remove(event.target.value);
     }
   }, {
-    key: "urlify",
-    value: function urlify(name) {
-      var words = name.toLowerCase().split(' ').join('_');
-      return words;
-    }
-  }, {
-    key: "shakeItUp",
-    value: function shakeItUp() {
-      var _this2 = this;
-
-      this.props.clearCocktails();
-      this.setState({
-        shake: true
-      });
-      setTimeout(function () {
-        return _this2.shake2();
-      }, 2000);
-    }
-  }, {
-    key: "shake2",
-    value: function shake2() {
-      var bar = this.props.myBar;
-      this.props.shake(bar);
-      this.setState({
-        shake: false
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
-      console.log('here', this.props);
-      console.log('HERE>>>>', this.state);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         id: "ingredz"
       }, "Cocktail Ingredients"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -283,12 +244,12 @@ function (_React$Component) {
           className: "itembutton",
           value: item.name,
           type: "submit",
-          onClick: _this3.addToBar
+          onClick: _this2.addToBar
         }, "ADD TO BAR"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "itembutton",
           value: item.name,
           type: "submit",
-          onClick: _this3.removeFromBar
+          onClick: _this2.removeFromBar
         }, "REMOVE")));
       })));
     }
@@ -300,7 +261,6 @@ function (_React$Component) {
 var mapState = function mapState(state) {
   return {
     items: state.items,
-    cocktails: state.cocktails,
     myBar: state.myBar
   };
 };
@@ -310,17 +270,11 @@ var mapDispatch = function mapDispatch(dispatch) {
     fetchItems: function fetchItems() {
       return dispatch(Object(_store_items__WEBPACK_IMPORTED_MODULE_2__["fetchItems"])());
     },
-    shake: function shake(bar) {
-      return dispatch(Object(_store_cocktails__WEBPACK_IMPORTED_MODULE_3__["shake"])(bar));
-    },
-    clearCocktails: function clearCocktails() {
-      return dispatch(Object(_store_cocktails__WEBPACK_IMPORTED_MODULE_3__["clearCocktails"])());
-    },
     add: function add(item) {
-      return dispatch(Object(_store_mybar__WEBPACK_IMPORTED_MODULE_4__["addToBar"])(item));
+      return dispatch(Object(_store_mybar__WEBPACK_IMPORTED_MODULE_3__["addToBar"])(item));
     },
     remove: function remove(item) {
-      return dispatch(Object(_store_mybar__WEBPACK_IMPORTED_MODULE_4__["removeFromBar"])(item));
+      return dispatch(Object(_store_mybar__WEBPACK_IMPORTED_MODULE_3__["removeFromBar"])(item));
     }
   };
 };
@@ -479,11 +433,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _store_items__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/items */ "./client/store/items.js");
-/* harmony import */ var _store_cocktails__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/cocktails */ "./client/store/cocktails.js");
-/* harmony import */ var _store_mybar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/mybar */ "./client/store/mybar.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./items */ "./client/components/items.js");
+/* harmony import */ var _store_cocktails__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/cocktails */ "./client/store/cocktails.js");
+/* harmony import */ var _store_mybar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/mybar */ "./client/store/mybar.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./items */ "./client/components/items.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -501,7 +454,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -530,14 +482,12 @@ function (_React$Component) {
     _this.urlify = _this.urlify.bind(_assertThisInitialized(_this));
     _this.shake2 = _this.shake2.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } // componentDidMount() {
+  //   this.props.fetchItems()
+  // }
+
 
   _createClass(Shaker, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchItems();
-    }
-  }, {
     key: "addToBar",
     value: function addToBar(event) {
       if (!this.props.myBar.includes(event.target.value)) {
@@ -622,18 +572,18 @@ function (_React$Component) {
           if (cocktail !== 'Water') {
             return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
               key: cocktail
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
               to: "/recipes/".concat(_this3.urlify(cocktail))
             }, cocktail));
           }
         } else {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             key: cocktail
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
             to: "/recipes/".concat(_this3.urlify(cocktail))
           }, cocktail));
         }
-      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_items__WEBPACK_IMPORTED_MODULE_6__["default"], null));
+      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_items__WEBPACK_IMPORTED_MODULE_5__["default"], null));
     }
   }]);
 
@@ -642,7 +592,6 @@ function (_React$Component) {
 
 var mapState = function mapState(state) {
   return {
-    items: state.items,
     cocktails: state.cocktails,
     myBar: state.myBar
   };
@@ -650,20 +599,17 @@ var mapState = function mapState(state) {
 
 var mapDispatch = function mapDispatch(dispatch) {
   return {
-    fetchItems: function fetchItems() {
-      return dispatch(Object(_store_items__WEBPACK_IMPORTED_MODULE_2__["fetchItems"])());
-    },
     shake: function shake(bar) {
-      return dispatch(Object(_store_cocktails__WEBPACK_IMPORTED_MODULE_3__["shake"])(bar));
+      return dispatch(Object(_store_cocktails__WEBPACK_IMPORTED_MODULE_2__["shake"])(bar));
     },
     clearCocktails: function clearCocktails() {
-      return dispatch(Object(_store_cocktails__WEBPACK_IMPORTED_MODULE_3__["clearCocktails"])());
+      return dispatch(Object(_store_cocktails__WEBPACK_IMPORTED_MODULE_2__["clearCocktails"])());
     },
     add: function add(item) {
-      return dispatch(Object(_store_mybar__WEBPACK_IMPORTED_MODULE_4__["addToBar"])(item));
+      return dispatch(Object(_store_mybar__WEBPACK_IMPORTED_MODULE_3__["addToBar"])(item));
     },
     remove: function remove(item) {
-      return dispatch(Object(_store_mybar__WEBPACK_IMPORTED_MODULE_4__["removeFromBar"])(item));
+      return dispatch(Object(_store_mybar__WEBPACK_IMPORTED_MODULE_3__["removeFromBar"])(item));
     }
   };
 };

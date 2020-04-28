@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchItems} from '../store/items'
 import {shake, clearCocktails} from '../store/cocktails'
 import {addToBar, removeFromBar} from '../store/mybar'
 import {Link} from 'react-router-dom'
@@ -18,9 +17,9 @@ class Shaker extends React.Component {
     this.urlify = this.urlify.bind(this)
     this.shake2 = this.shake2.bind(this)
   }
-  componentDidMount() {
-    this.props.fetchItems()
-  }
+  // componentDidMount() {
+  //   this.props.fetchItems()
+  // }
 
   addToBar(event) {
     if (!this.props.myBar.includes(event.target.value)) {
@@ -60,7 +59,6 @@ class Shaker extends React.Component {
         <div id="bar_cocktails">
           <div id="bar">
             <h1>MY BAR</h1>
-            {/* <ul> */}
             {this.props.myBar.map(item => {
               return (
                 <div id="bar_item" key={item}>
@@ -77,7 +75,6 @@ class Shaker extends React.Component {
                 </div>
               )
             })}
-            {/* </ul> */}
           </div>
 
           {this.state.shake ? (
@@ -150,13 +147,11 @@ class Shaker extends React.Component {
 }
 
 const mapState = state => ({
-  items: state.items,
   cocktails: state.cocktails,
   myBar: state.myBar
 })
 
 const mapDispatch = dispatch => ({
-  fetchItems: () => dispatch(fetchItems()),
   shake: bar => dispatch(shake(bar)),
   clearCocktails: () => dispatch(clearCocktails()),
   add: item => dispatch(addToBar(item)),
