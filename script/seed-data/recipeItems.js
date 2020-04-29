@@ -1,146 +1,188 @@
 const {RecipeItem} = require('../../server/db/models')
 
+let ingreds = {
+  bourbon: 1,
+  campari: 2,
+  champagne: 3,
+  coffeeLiqueur: 4,
+  cognac: 5,
+  gin: 6,
+  orangeLiqueur: 7,
+  rum: 8,
+  tequila: 9,
+  vermouth: 10,
+  vodka: 11,
+  whiskey: 12,
+  bitters: 13,
+  clubSoda: 14,
+  cream: 15,
+  gingerBeer: 16,
+  honey: 17,
+  ice: 18,
+  lemon: 19,
+  lime: 20,
+  mint: 21,
+  orange: 22,
+  oj: 23,
+  salt: 24,
+  sugar: 25,
+  simpleSyrup: 26,
+  tonic: 27,
+  blender: 28,
+  shaker: 29,
+  muddler: 30
+}
+
 const recipesitems = [
   //AMERICANO 1
-  {recipeId: 25, itemId: 8, amount: '1.5 oz'}, //campari
-  {recipeId: 25, itemId: 9, amount: '1.5 oz'}, //vermouth
-  {recipeId: 25, itemId: 14, amount: '1 splash'}, //club soda
-  {recipeId: 25, itemId: 13}, //ice
+  {recipeId: 1, itemId: ingreds.campari, amount: '1.5 oz'}, //campari
+  {recipeId: 1, itemId: ingreds.vermouth, amount: '1.5 oz'}, //vermouth
+  {recipeId: 1, itemId: ingreds.clubSoda, amount: '1 splash'}, //club soda
+  {recipeId: 1, itemId: ingreds.ice}, //ice
 
   //BOURBON ON THE ROCKS 2
-  {recipeId: 24, itemId: 6, amount: '2 oz'}, //bourbon
-  {recipeId: 24, itemId: 13}, //ice
+  {recipeId: 2, itemId: ingreds.bourbon, amount: '2 oz'}, //bourbon
+  {recipeId: 2, itemId: ingreds.ice}, //ice
 
   //CHAMPAGNE COCKTAIL 3
-  {recipeId: 19, itemId: 7, amount: '3 oz'}, //champagne
-  {recipeId: 19, itemId: 11, amount: '1/3 oz'}, //cognac
-  {recipeId: 19, itemId: 19, amount: '2 dashes'}, //bitters
-  {recipeId: 19, itemId: 20, amount: '1 cube'}, //sugar
+  {recipeId: 3, itemId: ingreds.champagne, amount: '3 oz'}, //champagne
+  {recipeId: 3, itemId: ingreds.cognac, amount: '1/3 oz'}, //cognac
+  {recipeId: 3, itemId: ingreds.bitters, amount: '2 dashes'}, //bitters
+  {recipeId: 3, itemId: ingreds.sugar, amount: '1 cube'}, //sugar
 
   //DARK AND STORMY 4
-  {recipeId: 10, itemId: 3, amount: '1 part'}, //rum
-  {recipeId: 10, itemId: 18, amount: '2 parts'}, //ginger beer
-  {recipeId: 10, itemId: 16}, //lime
-  {recipeId: 10, itemId: 13}, //ice
+  {recipeId: 4, itemId: ingreds.rum, amount: '1 part'}, //rum
+  {recipeId: 4, itemId: ingreds.gingerBeer, amount: '2 parts'}, //ginger beer
+  {recipeId: 4, itemId: ingreds.lime}, //lime
+  {recipeId: 4, itemId: ingreds.ice}, //ice
 
   //DAIQUIRI 5
-  {recipeId: 8, itemId: 3, amount: '2 oz'}, //rum
-  {recipeId: 8, itemId: 22}, //simple syrup
-  {recipeId: 8, itemId: 16}, //lime
-  {recipeId: 8, itemId: 13}, //ice
+  {recipeId: 5, itemId: ingreds.rum, amount: '2 oz'}, //rum
+  {recipeId: 5, itemId: ingreds.simpleSyrup}, //simple syrup
+  {recipeId: 5, itemId: ingreds.lime}, //lime
+  {recipeId: 5, itemId: ingreds.ice}, //ice
 
   //GIN & TONIC 6
-  {recipeId: 7, itemId: 4, amount: '2 oz'}, //gin
-  {recipeId: 7, itemId: 21}, //tonic water
-  {recipeId: 7, itemId: 13}, //ice
+  {recipeId: 6, itemId: ingreds.gin, amount: '2 oz'}, //gin
+  {recipeId: 6, itemId: ingreds.tonic}, //tonic water
+  {recipeId: 6, itemId: ingreds.ice}, //ice
 
   //GIN MARTINI 7
-  {recipeId: 12, itemId: 4, amount: '2 oz'}, //gin
-  {recipeId: 12, itemId: 9, amount: '1 oz'}, //vermouth
-  {recipeId: 12, itemId: 13}, //ice
+  {recipeId: 7, itemId: ingreds.gin, amount: '2 oz'}, //gin
+  {recipeId: 7, itemId: ingreds.vermouth, amount: '1 oz'}, //vermouth
+  {recipeId: 7, itemId: ingreds.ice}, //ice
 
   //GIN GIMLET 8
-  {recipeId: 16, itemId: 4, amount: '2 oz'}, //gin
-  {recipeId: 16, itemId: 16}, //lime
-  {recipeId: 16, itemId: 13}, //ice
-  {recipeId: 16, itemId: 26}, //cocktail shaker
+  {recipeId: 8, itemId: ingreds.gin, amount: '2 oz'}, //gin
+  {recipeId: 8, itemId: ingreds.lime}, //lime
+  {recipeId: 8, itemId: ingreds.ice}, //ice
+  {recipeId: 8, itemId: ingreds.shaker}, //cocktail shaker
 
-  //MANHATTAN 9
-  {recipeId: 14, itemId: 5, amount: '2 oz'}, //whiskey
-  {recipeId: 14, itemId: 9, amount: '1 oz'}, //vermouth
-  {recipeId: 14, itemId: 19, amount: '2 dashes'}, //bitters
-  {recipeId: 14, itemId: 13}, //ice
+  //HOT TODDY 9
+  {recipeId: 9, itemId: ingreds.honey, amount: '2-3 tsp'}, //honey
+  {recipeId: 9, itemId: ingreds.lemon, amount: '2-3 tsp'}, //lemon
+  {recipeId: 9, itemId: ingreds.whiskey, amount: '2 oz'}, //honey
 
-  //MARGARITA 10
-  {recipeId: 18, itemId: 1, amount: '2 oz'}, //tequila
-  {recipeId: 18, itemId: 10, amount: '1 oz'}, //orange liqueur
-  {recipeId: 18, itemId: 16}, //lime
-  {recipeId: 18, itemId: 23}, //salt
-  {recipeId: 18, itemId: 13}, //ice
-  {recipeId: 18, itemId: 26}, //cocktail shaker
+  //MANHATTAN 10
+  {recipeId: 10, itemId: ingreds.whiskey, amount: '2 oz'}, //whiskey
+  {recipeId: 10, itemId: ingreds.vermouth, amount: '1 oz'}, //vermouth
+  {recipeId: 10, itemId: ingreds.bitters, amount: '2 dashes'}, //bitters
+  {recipeId: 10, itemId: ingreds.ice}, //ice
 
-  //MOJITO 11
-  {recipeId: 21, itemId: 25, amount: '10'}, //mint leaves
-  {recipeId: 21, itemId: 16, amount: '1/2'}, //lime
-  {recipeId: 21, itemId: 20, amount: '2 tbsp'}, //sugar
-  {recipeId: 21, itemId: 13}, //ice
-  {recipeId: 21, itemId: 3, amount: '1.5 oz'}, //rum
-  {recipeId: 21, itemId: 14, amount: '1/2 cup'}, //club soda
-  {recipeId: 21, itemId: 28}, //muddler
+  //MARGARITA 11
+  {recipeId: 11, itemId: ingreds.tequila, amount: '2 oz'}, //tequila
+  {recipeId: 11, itemId: ingreds.orangeLiqueur, amount: '1 oz'}, //orange liqueur
+  {recipeId: 11, itemId: ingreds.lime}, //lime
+  {recipeId: 11, itemId: ingreds.salt}, //salt
+  {recipeId: 11, itemId: ingreds.ice}, //ice
+  {recipeId: 11, itemId: ingreds.shaker}, //cocktail shaker
 
-  //MOSCOW MULE 12
-  {recipeId: 5, itemId: 2, amount: '1.5 oz'}, //vodka
-  {recipeId: 5, itemId: 16}, //lime
-  {recipeId: 5, itemId: 18}, //ginger beer
-  {recipeId: 5, itemId: 13}, //ice
+  //MIMOSA 12
+  {recipeId: 12, itemId: ingreds.oj}, //orange juice
+  {recipeId: 12, itemId: ingreds.champagne}, //champagne
 
-  //NEGRONI 13
-  {recipeId: 11, itemId: 4, amount: '1 oz'}, //gin
-  {recipeId: 11, itemId: 9, amount: '1 oz'}, //vermouth
-  {recipeId: 11, itemId: 8, amount: '1 oz'}, //campari
-  {recipeId: 11, itemId: 13}, //ice
+  //MOJITO 13
+  {recipeId: 13, itemId: ingreds.mint, amount: '10'}, //mint leaves
+  {recipeId: 13, itemId: ingreds.lime, amount: '1/2'}, //lime
+  {recipeId: 13, itemId: ingreds.sugar, amount: '2 tbsp'}, //sugar
+  {recipeId: 13, itemId: ingreds.ice}, //ice
+  {recipeId: 13, itemId: ingreds.rum, amount: '1.5 oz'}, //rum
+  {recipeId: 13, itemId: ingreds.clubSoda, amount: '1/2 cup'}, //club soda
+  {recipeId: 13, itemId: ingreds.muddler}, //muddler
 
-  //OLD FASHIONED 14
-  {recipeId: 6, itemId: 6, amount: '2 oz'}, //bourbon
-  {recipeId: 6, itemId: 19, amount: '3 dashes'}, //bitters
-  {recipeId: 6, itemId: 20, amount: '1 teaspoon'}, //sugar
-  {recipeId: 6, itemId: 17, amount: '1 peel of'}, //orange
-  {recipeId: 6, itemId: 13, amount: '3 cubes'}, //ice
+  //MOSCOW MULE 14
+  {recipeId: 14, itemId: ingreds.vodka, amount: '1.5 oz'}, //vodka
+  {recipeId: 14, itemId: ingreds.lime}, //lime
+  {recipeId: 14, itemId: ingreds.gingerBeer}, //ginger beer
+  {recipeId: 14, itemId: ingreds.ice}, //ice
 
-  //SIDECAR 15
-  {recipeId: 15, itemId: 11, amount: '2 oz'}, //cognac
-  {recipeId: 15, itemId: 10, amount: '3/4 oz'}, //orange liqueur
-  {recipeId: 15, itemId: 13}, //ice
-  {recipeId: 15, itemId: 15, amount: '3/4 oz'}, //lemon juice
-  {recipeId: 15, itemId: 20}, //sugar
-  {recipeId: 15, itemId: 17}, //orange
+  //NEGRONI 15
+  {recipeId: 15, itemId: ingreds.gin, amount: '1 oz'}, //gin
+  {recipeId: 15, itemId: ingreds.vermouth, amount: '1 oz'}, //vermouth
+  {recipeId: 15, itemId: ingreds.campari, amount: '1 oz'}, //campari
+  {recipeId: 15, itemId: ingreds.ice}, //ice
 
-  //TEQUILA ON THE ROCKS 16
-  {recipeId: 4, itemId: 1, amount: '2 oz'}, //tequila
-  {recipeId: 4, itemId: 13}, //ice
+  //OLD FASHIONED 16
+  {recipeId: 16, itemId: ingreds.bourbon, amount: '2 oz'}, //bourbon
+  {recipeId: 16, itemId: ingreds.bitters, amount: '3 dashes'}, //bitters
+  {recipeId: 16, itemId: ingreds.sugar, amount: '1 teaspoon'}, //sugar
+  {recipeId: 16, itemId: ingreds.orange, amount: '1 peel of'}, //orange
+  {recipeId: 16, itemId: ingreds.ice, amount: '3 cubes'}, //ice
 
-  //TEQUILA SODA 17
-  {recipeId: 1, itemId: 1, amount: '2 oz'}, //tequila
-  {recipeId: 1, itemId: 14}, //club soda
-  {recipeId: 1, itemId: 13}, //ice
+  //SIDECAR 17
+  {recipeId: 17, itemId: ingreds.cognac, amount: '2 oz'}, //cognac
+  {recipeId: 17, itemId: ingreds.orangeLiqueur, amount: '3/4 oz'}, //orange liqueur
+  {recipeId: 17, itemId: ingreds.ice}, //ice
+  {recipeId: 17, itemId: ingreds.lemon, amount: '3/4 oz'}, //lemon juice
+  {recipeId: 17, itemId: ingreds.sugar}, //sugar
+  {recipeId: 17, itemId: ingreds.orange}, //orange
 
-  //VODKA GIMLET 18
-  {recipeId: 17, itemId: 2, amount: '2 oz'}, //vodka
-  {recipeId: 17, itemId: 16}, //lime
-  {recipeId: 17, itemId: 13}, //ice
-  {recipeId: 17, itemId: 26}, //cocktail shaker
+  //TEQUILA ON THE ROCKS 18
+  {recipeId: 18, itemId: ingreds.tequila, amount: '2 oz'}, //tequila
+  {recipeId: 18, itemId: ingreds.ice}, //ice
 
-  //VODKA MARTINI 19
-  {recipeId: 13, itemId: 2, amount: '2 oz'}, //vodka
-  {recipeId: 13, itemId: 9, amount: '1 oz'}, //vermouth
-  {recipeId: 13, itemId: 13}, //ice
+  //TEQUILA SODA 19
+  {recipeId: 19, itemId: ingreds.tequila, amount: '2 oz'}, //tequila
+  {recipeId: 19, itemId: ingreds.clubSoda}, //club soda
+  {recipeId: 19, itemId: ingreds.ice}, //ice
 
-  //VODKA ON THE ROCKS 20
-  {recipeId: 3, itemId: 2, amount: '2 oz'}, //vodka
-  {recipeId: 3, itemId: 13}, //ice
+  //VODKA GIMLET 20
+  {recipeId: 20, itemId: ingreds.vodka, amount: '2 oz'}, //vodka
+  {recipeId: 20, itemId: ingreds.lime}, //lime
+  {recipeId: 20, itemId: ingreds.ice}, //ice
+  {recipeId: 20, itemId: ingreds.shaker}, //cocktail shaker
 
-  //VODKA SODA 21
-  {recipeId: 2, itemId: 2, amount: '2 oz'}, //vodka
-  {recipeId: 2, itemId: 14}, //club soda
-  {recipeId: 2, itemId: 13}, //ice
+  //VODKA MARTINI 21
+  {recipeId: 21, itemId: ingreds.vodka, amount: '2 oz'}, //vodka
+  {recipeId: 21, itemId: ingreds.vermouth, amount: '1 oz'}, //vermouth
+  {recipeId: 21, itemId: ingreds.ice}, //ice
 
-  //WHISKEY ON THE ROCKS 22
-  {recipeId: 23, itemId: 5, amount: '2 oz'}, //whiskey
-  {recipeId: 23, itemId: 13}, //ice
+  //VODKA ON THE ROCKS 22
+  {recipeId: 22, itemId: ingreds.vodka, amount: '2 oz'}, //vodka
+  {recipeId: 22, itemId: ingreds.ice}, //ice
 
-  //WHISKEY SOUR 23
-  {recipeId: 9, itemId: 5, amount: '2 oz'}, //whiskey
-  {recipeId: 9, itemId: 15, amount: '3/4 oz'}, //lemon juice
-  {recipeId: 9, itemId: 22, amount: '3/4 oz'}, //simple syrup
-  {recipeId: 9, itemId: 13}, //ice
+  //VODKA SODA 23
+  {recipeId: 23, itemId: ingreds.vodka, amount: '2 oz'}, //vodka
+  {recipeId: 23, itemId: ingreds.clubSoda}, //club soda
+  {recipeId: 23, itemId: ingreds.ice}, //ice
 
-  //WHITE RUSSIAN 24
-  {recipeId: 20, itemId: 2, amount: '2 tbsp'}, //vodka
-  {recipeId: 20, itemId: 12, amount: '2 tbsp'}, //coffee liqueor
-  {recipeId: 20, itemId: 24, amount: '2 tbsp'}, //cream
-  {recipeId: 20, itemId: 13} //ice
+  //WHISKEY ON THE ROCKS 24
+  {recipeId: 24, itemId: ingreds.whiskey, amount: '2 oz'}, //whiskey
+  {recipeId: 24, itemId: ingreds.ice}, //ice
 
-  // WATER 25
+  //WHISKEY SOUR 25
+  {recipeId: 25, itemId: ingreds.whiskey, amount: '2 oz'}, //whiskey
+  {recipeId: 25, itemId: ingreds.lemon, amount: '3/4 oz'}, //lemon juice
+  {recipeId: 25, itemId: ingreds.simpleSyrup, amount: '3/4 oz'}, //simple syrup
+  {recipeId: 25, itemId: ingreds.ice}, //ice
+
+  //WHITE RUSSIAN 26
+  {recipeId: 26, itemId: ingreds.vodka, amount: '2 tbsp'}, //vodka
+  {recipeId: 26, itemId: ingreds.coffeeLiqueur, amount: '2 tbsp'}, //coffee liqueor
+  {recipeId: 26, itemId: ingreds.cream, amount: '2 tbsp'}, //cream
+  {recipeId: 26, itemId: ingreds.ice} //ice
+
+  // WATER 27
 ]
 
 const seedRIs = () => Promise.all(recipesitems.map(ri => RecipeItem.create(ri)))

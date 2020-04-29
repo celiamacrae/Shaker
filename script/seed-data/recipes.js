@@ -174,6 +174,19 @@ const americano = {
   imageURL:
     'https://www.liquor.com/thmb/BeSLdsxQ2pCBDtYVK0Z2hOmDdAs=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2017__05__18075612__americano-720x720-article-50171f19cc644b05b8df563e06a647fd.jpg'
 }
+const hotToddy = {
+  name: 'Hot Toddy',
+  description:
+    'In a teapot or saucepan, bring 3/4 cup of water to a boil. $Pour the hot water into a mug. $Add the whiskey, 2 tsp honey, and 2 tsp lemon juice. $Stir until the honey has disappeared into the hot water. $Taste, and add 1 teaspoon honey for more sweetness, and/or 1 teaspoon more lemon juice for more zing. $Optinally: Garnish with a lemon round and cinnamon stick (if using). Enjoy!',
+  imageURL: 'https://cookieandkate.com/images/2017/12/hot-toddy-recipe.jpg'
+}
+const mimosa = {
+  name: 'Mimosa',
+  description:
+    'Pour desired amount of champagne into glass or pitcher. $Top with orange juice.',
+  imageURL:
+    'https://www.simplejoy.com/wp-content/uploads/2018/12/mimosa-mocktail-recipe.jpg'
+}
 
 async function seedRecipes() {
   await Recipe.create(americano)
@@ -184,8 +197,10 @@ async function seedRecipes() {
   await Recipe.create(ginTonic)
   await Recipe.create(ginMartini)
   await Recipe.create(ginGimlet)
+  await Recipe.create(hotToddy)
   await Recipe.create(manhattan)
   await Recipe.create(margarita)
+  await Recipe.create(mimosa)
   await Recipe.create(mojito)
   await Recipe.create(moscowMule)
   await Recipe.create(negroni)
