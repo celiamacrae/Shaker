@@ -37,13 +37,6 @@ nav a {
 
 /* ~~~ ITEMS ~~~ */
 
-#allitems {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-} /*flex box container for all items */
-
 #search {
   display: flex;
   flex-direction: row;
@@ -51,15 +44,13 @@ nav a {
   margin: 0px 20px 20px 20px;
 }
 
-.item {
+.citem {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* border: solid; */
-  margin: 10px;
-  width: 100px;
-  height: 130px;
+  width: 110px;
+  height: 135px;
   border-radius: 25%;
   padding: 5px;
 } /*flex box container for single item*/
@@ -89,14 +80,9 @@ nav a {
 } /*flex box container with add to bar/ remove from bar buttons */
 
 .itembutton {
-  width: 85px;
-  align-self: center;
+  width: 10px;
   border-radius: 5%;
-  margin: 2px;
-  border-style: none;
-  font-family: 'Courier New', Courier, monospace;
-  /* background-color: */
-  /* color: white; */
+  /* font-family: 'Courier New', Courier, monospace; */
 } /*single button (add/remove from bar)*/
 
 #bar_cocktails {
@@ -121,39 +107,32 @@ nav a {
 } /* #1/3 */
 #goodcocktials {
   width: 250px;
-  /* margin: 10px; */
   display: flex;
   flex-direction: column;
   align-items: center;
 } /* #2/3 */
 #bar {
   width: 250px;
-  /* margin: 10px; */
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
 }
-#shake {
-  width: 200px;
-  font-size: 100x;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 26px;
-  border-radius: 5%;
-}
-
-/* #bar {
-  margin: 0px 200px 0px 0px;
-} */
 
 #bar_item {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 #lilx {
   height: 10px;
   width: 10px;
+}
+
+.MuiButton-sizeSmall {
+  height: 30px;
+  width: 30px;
+  /* padding: 1px; */
+  z-index: 1;
 }
 
 /* ~~~ SINGLE COCKTAIL ~~~ */

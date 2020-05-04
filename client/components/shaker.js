@@ -1,9 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {shake, clearCocktails} from '../store/cocktails'
 import {addToBar, removeFromBar} from '../store/mybar'
 import {Link} from 'react-router-dom'
 import Items from './items'
+import Shake from './shake'
+import Cocktails from './my_cocktails'
+import Button from '@material-ui/core/Button'
 
 class Shaker extends React.Component {
   constructor() {
@@ -11,42 +13,21 @@ class Shaker extends React.Component {
     this.state = {
       shake: false
     }
-    this.addToBar = this.addToBar.bind(this)
     this.removeFromBar = this.removeFromBar.bind(this)
-    this.shakeItUp = this.shakeItUp.bind(this)
-    this.urlify = this.urlify.bind(this)
-    this.shake2 = this.shake2.bind(this)
-  }
-
-  addToBar(event) {
-    if (!this.props.myBar.includes(event.target.value)) {
-      this.props.add(event.target.value)
-    }
+    // this.urlify = this.urlify.bind(this)
   }
 
   removeFromBar(event) {
-    this.props.remove(event.target.value)
+    this.props.remove(event.currentTarget.value)
   }
 
-  urlify(name) {
-    let words = name
-      .toLowerCase()
-      .split(' ')
-      .join('_')
-    return words
-  }
-
-  shakeItUp() {
-    this.props.clearCocktails()
-    this.setState({shake: true})
-    setTimeout(() => this.shake2(), 2000)
-  }
-
-  shake2() {
-    let bar = this.props.myBar
-    this.props.shake(bar)
-    this.setState({shake: false})
-  }
+  // urlify(name) {
+  //   let words = name
+  //     .toLowerCase()
+  //     .split(' ')
+  //     .join('_')
+  //   return words
+  // }
 
   render() {
     console.log('here', this.props)
@@ -59,80 +40,24 @@ class Shaker extends React.Component {
             {this.props.myBar.map(item => {
               return (
                 <div id="bar_item" key={item}>
-                  <li>{item}</li>
-
                   <br />
-                  <button
+                  <Button
                     value={item}
-                    type="submit"
+                    variant="contained"
+                    fullWidth={false}
+                    size="small"
                     onClick={this.removeFromBar}
                   >
-                    x
-                  </button>
+                    X
+                  </Button>
+                  <p>{item}</p>
                 </div>
               )
             })}
           </div>
 
-          {this.state.shake ? (
-            <div id="dawg">
-              <br />
-              <img
-                id="dog"
-                src="https://media2.giphy.com/media/3o85xomqdEz6L0wS8o/200.gif"
-              />
-              <br />
-              {this.props.myBar.length > 0 ? (
-                <button id="shake" type="submit" onClick={this.shakeItUp}>
-                  SHAKE IT UP
-                </button>
-              ) : (
-                <p />
-              )}
-            </div>
-          ) : (
-            <div id="dawg">
-              <br />
-              <img id="dog" src="https://i.imgur.com/fzOHzri.png" />
-              <br />
-              {this.props.myBar.length > 0 ? (
-                <button id="shake" type="submit" onClick={this.shakeItUp}>
-                  SHAKE IT UP
-                </button>
-              ) : (
-                <p />
-              )}
-            </div>
-          )}
-
-          {this.props.cocktails ? (
-            <div id="goodcocktials">
-              <h1>Cocktails</h1>
-              {this.props.cocktails.map(cocktail => {
-                if (this.props.cocktails.length > 1) {
-                  if (cocktail !== 'Water') {
-                    return (
-                      <div key={cocktail}>
-                        <Link to={`/recipes/${this.urlify(cocktail)}`}>
-                          {cocktail}
-                        </Link>
-                      </div>
-                    )
-                  }
-                } else {
-                  return (
-                    <div key={cocktail}>
-                      <Link to={`/recipes/${this.urlify(cocktail)}`}>
-                        {cocktail}
-                      </Link>
-                    </div>
-                  )
-                }
-              })}
-            </div>
-          ) : (
-            <div />
-          )}
+          <Shake />
+          <Cocktails />
         </div>
 
         <br />
@@ -149,8 +74,6 @@ const mapState = state => ({
 })
 
 const mapDispatch = dispatch => ({
-  shake: bar => dispatch(shake(bar)),
-  clearCocktails: () => dispatch(clearCocktails()),
   add: item => dispatch(addToBar(item)),
   remove: item => dispatch(removeFromBar(item))
 })

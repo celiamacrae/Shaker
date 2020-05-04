@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {fetchItems} from '../store/items'
 import {addToBar, removeFromBar} from '../store/mybar'
 import Button from '@material-ui/core/Button'
+import {Grid} from '@material-ui/core'
 
 class Items extends React.Component {
   constructor() {
@@ -54,47 +55,62 @@ class Items extends React.Component {
           />
         </div>
 
-        <div id="allitems">
-          {this.props.items.map(item => {
-            if (item.name) {
-              if (
-                item.name
-                  .toLowerCase()
-                  .includes(this.state.search.toLowerCase())
-              ) {
-                return (
-                  <div className={`item ${item.category}`} key={item.id}>
-                    <p className="itemName">{item.name}</p>
+        {/* <div id="allitems"> */}
+        <div style={{padding: 20}}>
+          <Grid container spacing={3} wrap="wrap" justify="center">
+            {this.props.items.map(item => {
+              if (item.name) {
+                if (
+                  item.name
+                    .toLowerCase()
+                    .includes(this.state.search.toLowerCase())
+                ) {
+                  return (
+                    // <div className={`item ${item.category}`} key={item.id}>
+                    <div style={{padding: 5}}>
+                      <Grid
+                        item
+                        className={`citem ${item.category}`}
+                        key={item.id}
+                      >
+                        <p className="itemName">{item.name}</p>
 
-                    <div id="itembuttons">
-                      <Button
-                        size="small"
-                        variant="text"
-                        color="black"
-                        className="itembutton"
-                        value={item.name}
-                        type="submit"
-                        onClick={this.addToBar}
-                      >
-                        ADD
-                      </Button>
-                      <Button
-                        size="small"
-                        variant="text"
-                        color="black"
-                        className="itembutton"
-                        value={item.name}
-                        type="submit"
-                        onClick={this.removeFromBar}
-                      >
-                        REMOVE
-                      </Button>
+                        <div id="itembuttons">
+                          <Button
+                            fullWidth={false}
+                            size="small"
+                            variant="text"
+                            color="black"
+                            className="itembutton"
+                            value={item.name}
+                            type="submit"
+                            onClick={this.addToBar}
+                          >
+                            +
+                          </Button>
+
+                          <Button
+                            fullWidth={false}
+                            size="small"
+                            variant="text"
+                            color="black"
+                            className="itembutton"
+                            value={item.name}
+                            type="submit"
+                            onClick={this.removeFromBar}
+                          >
+                            -
+                          </Button>
+                        </div>
+                        {/* </div> */}
+                      </Grid>
                     </div>
-                  </div>
-                )
+                  )
+                }
               }
-            }
-          })}
+            })}
+            {/* </div> */}
+          </Grid>
         </div>
       </div>
     )
