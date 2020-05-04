@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {UserHome, Items, Recipes, SingleCocktail, Shaker} from './components'
+import {UserHome, Recipes, SingleCocktail, Shaker} from './components'
 import {me} from './store'
 
 /**
@@ -14,10 +14,9 @@ class Routes extends Component {
       <Switch>
         <Route path="/recipes/:name" component={SingleCocktail} />
         <Route path="/recipes" component={Recipes} />
-        <Route path="/items" component={Items} />
         <Route path="/shaker" component={Shaker} />
         <Route path="/home" component={UserHome} />
-        <Route path="/" component={UserHome} />
+        <Route path="/" component={Shaker} />
       </Switch>
     )
   }
