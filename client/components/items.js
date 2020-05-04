@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchItems} from '../store/items'
 import {addToBar, removeFromBar} from '../store/mybar'
+import Button from '@material-ui/core/Button'
 
 class Items extends React.Component {
   constructor() {
@@ -19,13 +20,13 @@ class Items extends React.Component {
   }
 
   addToBar(event) {
-    if (!this.props.myBar.includes(event.target.value)) {
-      this.props.add(event.target.value)
+    if (!this.props.myBar.includes(event.currentTarget.value)) {
+      this.props.add(event.currentTarget.value)
     }
   }
 
   removeFromBar(event) {
-    this.props.remove(event.target.value)
+    this.props.remove(event.currentTarget.value)
   }
 
   async handleChange(event) {
@@ -66,22 +67,28 @@ class Items extends React.Component {
                     <p className="itemName">{item.name}</p>
 
                     <div id="itembuttons">
-                      <button
+                      <Button
+                        size="small"
+                        variant="text"
+                        color="black"
                         className="itembutton"
                         value={item.name}
                         type="submit"
                         onClick={this.addToBar}
                       >
-                        ADD TO BAR
-                      </button>
-                      <button
+                        ADD
+                      </Button>
+                      <Button
+                        size="small"
+                        variant="text"
+                        color="black"
                         className="itembutton"
                         value={item.name}
                         type="submit"
                         onClick={this.removeFromBar}
                       >
                         REMOVE
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 )

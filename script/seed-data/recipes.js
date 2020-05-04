@@ -106,14 +106,14 @@ const sidecar = {
     'https://stevethebartender.com.au/wp-content/uploads/2014/12/sidecar-cocktail-recipe.jpg'
 }
 const ginGimlet = {
-  name: 'Gimlet (Gin)',
+  name: 'Gin Gimlet',
   description:
     'Shake 2 oz gin and 2/3 oz lime juice with cracked ice. $Strain into a chilled cocktail glass.',
   imageURL:
     'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fclassic-vodka-gimlet-xl-recipe2017.jpg'
 }
 const vodkaGimlet = {
-  name: 'Gimlet (Vodka)',
+  name: 'Vodka Gimlet',
   description:
     'Shake 2 oz vodka and 2/3 oz lime juice with cracked ice. $Strain into a chilled cocktail glass.',
   imageURL:
