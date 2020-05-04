@@ -14,20 +14,11 @@ class Shaker extends React.Component {
       shake: false
     }
     this.removeFromBar = this.removeFromBar.bind(this)
-    // this.urlify = this.urlify.bind(this)
   }
 
   removeFromBar(event) {
     this.props.remove(event.currentTarget.value)
   }
-
-  // urlify(name) {
-  //   let words = name
-  //     .toLowerCase()
-  //     .split(' ')
-  //     .join('_')
-  //   return words
-  // }
 
   render() {
     console.log('here', this.props)
