@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import Button from '@material-ui/core/Button'
 import {shake, clearCocktails} from '../store/cocktails'
+import {Grid} from '@material-ui/core'
 
 class Shake extends React.Component {
   constructor() {
@@ -29,38 +30,48 @@ class Shake extends React.Component {
     console.log('here', this.props)
     console.log('HERE>>>>', this.state)
     return (
-      <div>
-        {this.state.shake ? (
-          <div id="dawg">
-            <br />
-            <img
-              id="dog"
-              src="https://media2.giphy.com/media/3o85xomqdEz6L0wS8o/200.gif"
-            />
-            <br />
-            {this.props.myBar.length > 0 ? (
-              // <Button id="shake" type="submit" onClick={this.shakeItUp}>
-              <Button size="large" variant="outlined" onClick={this.shakeItUp}>
-                SHAKE IT UP
-              </Button>
-            ) : (
-              <p />
-            )}
-          </div>
-        ) : (
-          <div id="dawg">
-            <br />
-            <img id="dog" src="https://i.imgur.com/fzOHzri.png" />
-            <br />
-            {this.props.myBar.length > 0 ? (
-              <Button size="large" variant="outlined" onClick={this.shakeItUp}>
-                SHAKE IT UP
-              </Button>
-            ) : (
-              <p />
-            )}
-          </div>
-        )}
+      <div className="here">
+        <Grid container justify="center">
+          {this.state.shake ? (
+            <div id="dawg">
+              <br />
+              <img
+                id="dog"
+                src="https://media2.giphy.com/media/3o85xomqdEz6L0wS8o/200.gif"
+              />
+              <br />
+              {this.props.myBar.length > 0 ? (
+                // <Button id="shake" type="submit" onClick={this.shakeItUp}>
+                <Button
+                  size="large"
+                  variant="outlined"
+                  onClick={this.shakeItUp}
+                >
+                  SHAKE IT UP
+                </Button>
+              ) : (
+                <p />
+              )}
+            </div>
+          ) : (
+            <div id="dawg">
+              <br />
+              <img id="dog" src="https://i.imgur.com/fzOHzri.png" />
+              <br />
+              {this.props.myBar.length > 0 ? (
+                <Button
+                  size="large"
+                  variant="outlined"
+                  onClick={this.shakeItUp}
+                >
+                  SHAKE IT UP
+                </Button>
+              ) : (
+                <p />
+              )}
+            </div>
+          )}
+        </Grid>
       </div>
     )
   }

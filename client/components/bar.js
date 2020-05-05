@@ -1,7 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {removeFromBar} from '../store/mybar'
+import ClearIcon from '@material-ui/icons/Clear'
 import Button from '@material-ui/core/Button'
+import {Grid} from '@material-ui/core'
 
 class Bar extends React.Component {
   constructor() {
@@ -16,25 +18,28 @@ class Bar extends React.Component {
 
   render() {
     return (
-      <div id="bar">
-        <h1>MY BAR</h1>
-        {this.props.myBar.map(item => {
-          return (
-            <div id="bar_item" key={item}>
-              <br />
-              <Button
-                value={item}
-                variant="contained"
-                fullWidth={false}
-                size="small"
-                onClick={this.removeFromBar}
-              >
-                X
-              </Button>
-              <p>{item}</p>
-            </div>
-          )
-        })}
+      <div className="here">
+        <Grid container spacing={0} direction="column" wrap="wrap">
+          <h1>MY BAR</h1>
+          {this.props.myBar.map(item => {
+            return (
+              <div id="bar_item" key={item}>
+                <Grid container direction="row" alignItems="center">
+                  <Button
+                    value={item}
+                    fullWidth={false}
+                    size="small"
+                    onClick={this.removeFromBar}
+                  >
+                    <ClearIcon onClick={this.removeFromBar} />
+                  </Button>
+
+                  <p>{item}</p>
+                </Grid>
+              </div>
+            )
+          })}
+        </Grid>
       </div>
     )
   }
