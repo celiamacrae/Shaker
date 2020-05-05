@@ -16,21 +16,28 @@ let ingreds = {
   bitters: 13,
   clubSoda: 14,
   cream: 15,
-  gingerBeer: 16,
-  honey: 17,
-  ice: 18,
-  lemon: 19,
-  lime: 20,
-  mint: 21,
-  orange: 22,
-  oj: 23,
-  salt: 24,
-  sugar: 25,
-  simpleSyrup: 26,
-  tonic: 27,
-  blender: 28,
-  shaker: 29,
-  muddler: 30
+  cranjuice: 16, //new
+  gingerBeer: 17,
+  grenadine: 18, //new
+  honey: 19,
+  ice: 20,
+  lemon: 21,
+  lemonjuice: 22, //new
+  lime: 23,
+  limejuice: 24,
+  maraschinocherry: 25, //new
+  mint: 26,
+  orange: 27,
+  oj: 28,
+  pineapplejuice: 29, //new
+  salt: 20,
+  sugar: 31,
+  simpleSyrup: 32,
+  tomatojuice: 33, //new
+  tonic: 34,
+  blender: 35,
+  shaker: 36,
+  muddler: 37
 }
 
 const recipesitems = [
