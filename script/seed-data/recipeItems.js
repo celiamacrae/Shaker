@@ -30,7 +30,7 @@ let ingreds = {
   orange: 27,
   oj: 28,
   pineapplejuice: 29, //new
-  salt: 20,
+  salt: 30,
   sugar: 31,
   simpleSyrup: 32,
   tomatojuice: 33, //new
@@ -58,9 +58,9 @@ const recipesitems = [
   {recipeId: 3, itemId: ingreds.sugar, amount: '1 cube'}, //sugar
 
   //DARK AND STORMY 4
-  {recipeId: 4, itemId: ingreds.rum, amount: '1 part'}, //rum
-  {recipeId: 4, itemId: ingreds.gingerBeer, amount: '2 parts'}, //ginger beer
-  {recipeId: 4, itemId: ingreds.lime}, //lime
+  {recipeId: 4, itemId: ingreds.rum, amount: '2 oz'}, //rum
+  {recipeId: 4, itemId: ingreds.gingerBeer, amount: '3 oz'}, //ginger beer
+  {recipeId: 4, itemId: ingreds.limejuice, amount: '0.5 oz'}, //lime juice
   {recipeId: 4, itemId: ingreds.ice}, //ice
 
   //DAIQUIRI 5
