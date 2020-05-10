@@ -13,6 +13,9 @@ const Recipe = db.define('recipe', {
   },
   imageURL: {
     type: Sequelize.TEXT
+  },
+  source: {
+    type: Sequelize.TEXT
   }
 })
 

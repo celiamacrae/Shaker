@@ -63,7 +63,7 @@ const whiskeySour = {
   imageURL:
     'https://assets.bonappetit.com/photos/57acc14e53e63daf11a4d9b6/1:1/w_1536,h_1536,c_limit/whiskey-sour.jpg'
 }
-let darkStormy = {
+const darkStormy = {
   name: 'Dark and Stormy',
   description:
     'Fill glass with ice. $Add rum, and then top with ginger beer. $Squeeze in, and then garnish with lime wedge.',
@@ -186,6 +186,14 @@ const mimosa = {
     'Pour desired amount of champagne into glass or pitcher. $Top with orange juice.',
   imageURL:
     'https://www.simplejoy.com/wp-content/uploads/2018/12/mimosa-mocktail-recipe.jpg'
+}
+const bloodyMary = {
+  name: 'Bloody Mary',
+  description:
+    'Salt the rim of a tall glass. $In a cocktail mixer full of ice, combine the vodka, vegetable juice, Worcestershire sauce, hot pepper sauce, salt and pepper. $Shake vigorously and strain into the glass. $Optionally: Garnish with a stalk of celery and olives stuck onto a toothpick.',
+  imageURL:
+    'https://www.liquor.com/thmb/JQp6y1xoOGVmZrViBZNBXVt9JPk=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2017__09__01105541__classic-bloody-mary-720x720-recipe-22e93e6d3426461fa89ffc946640c58c.jpg',
+  source: 'https://www.liquor.com/recipes/classic-bloody-mary/'
 }
 
 async function seedRecipes() {
