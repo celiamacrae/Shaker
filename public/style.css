@@ -64,10 +64,11 @@ nav a {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 110px;
+  width: 135px;
   height: 135px;
   border-radius: 25%;
   padding: 5px;
+  font-size: 14px;
 } /*flex box container for single item*/
 
 .itemName {

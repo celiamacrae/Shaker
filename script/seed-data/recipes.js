@@ -198,6 +198,7 @@ const bloodyMary = {
 
 async function seedRecipes() {
   await Recipe.create(americano)
+  await Recipe.create(bloodyMary)
   await Recipe.create(bourbonOnTheRocks)
   await Recipe.create(champagneCocktail)
   await Recipe.create(darkStormy)
