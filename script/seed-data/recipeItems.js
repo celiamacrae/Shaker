@@ -14,30 +14,35 @@ let ingreds = {
   vodka: 11,
   whiskey: 12,
   bitters: 13,
-  clubSoda: 14,
-  cream: 15,
-  cranjuice: 16, //new
-  gingerBeer: 17,
-  grenadine: 18, //new
-  honey: 19,
-  ice: 20,
-  lemon: 21,
-  lemonjuice: 22, //new
-  lime: 23,
-  limejuice: 24,
-  maraschinocherry: 25, //new
-  mint: 26,
-  orange: 27,
-  oj: 28,
-  pineapplejuice: 29, //new
-  salt: 30,
-  sugar: 31,
-  simpleSyrup: 32,
-  tomatojuice: 33, //new
-  tonic: 34,
-  blender: 35,
-  shaker: 36,
-  muddler: 37
+  celery: 14, //newnew
+  clubSoda: 15,
+  cream: 16,
+  cranjuice: 17, //new
+  gingerBeer: 18,
+  greenOlives: 19, //newnew
+  grenadine: 20, //new
+  honey: 21,
+  hotsauce: 22, //newnew
+  ice: 23,
+  lemon: 24,
+  lemonjuice: 25, //new
+  lime: 26,
+  limejuice: 27,
+  maraschinocherry: 28, //new
+  mint: 29,
+  orange: 30,
+  oj: 31,
+  pepper: 32, //newnew
+  pineapplejuice: 33, //new
+  salt: 34,
+  sugar: 35,
+  simpleSyrup: 36,
+  tomatojuice: 37, //new
+  tonic: 38,
+  worcestershire: 39, //newnew
+  blender: 40,
+  shaker: 41,
+  muddler: 42
 }
 
 const recipesitems = [
