@@ -37,13 +37,14 @@ let ingreds = {
   salt: 34,
   sugar: 35,
   sparklingWater: 36, //newnew
-  simpleSyrup: 37,
-  tomatojuice: 38, //new
-  tonic: 39,
-  worcestershire: 40, //newnew
-  blender: 41,
-  shaker: 42,
-  muddler: 43
+  sprite: 37, //newnew
+  simpleSyrup: 38,
+  tomatojuice: 39, //new
+  tonic: 40,
+  worcestershire: 41, //newnew
+  blender: 42,
+  shaker: 43,
+  muddler: 44
 }
 
 const recipesitems = [
