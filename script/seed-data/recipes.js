@@ -211,6 +211,13 @@ const tomColins = {
     'https://www.liquor.com/thmb/4SIABFe9XWJ0VmHSsksaRmrIpuc=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2019__04__03080950__Tom-Collins-720x720-recipe-e87bf7954cdb4438b5e8d21f568cdd6f.jpg',
   source: 'https://www.liquor.com/recipes/tom-collins-2/'
 }
+const whiskeyPunch = {
+  name: 'Whiskey Sour Party Punch',
+  description:
+    'In a large bowl or pitcher, combine all ingredients except the Sprite. Stir well. $Chill and add Sprite before serving. $Optional: Add sliced lemons and oranges.',
+  imageURL: 'https://c1.staticflickr.com/5/4168/34022496890_89d6d4c566_o.png',
+  source: 'http://www.tastefullyeclectic.com/whiskey-sour-party-punch-recipe/'
+}
 
 async function seedRecipes() {
   await Recipe.create(americano)
@@ -241,6 +248,7 @@ async function seedRecipes() {
   await Recipe.create(vodkaSoda)
   await Recipe.create(whiskeyOnTheRocks)
   await Recipe.create(whiskeySour)
+  await Recipe.create(whiskeyPunch)
   await Recipe.create(whiteRussian)
   await Recipe.create(water)
 }

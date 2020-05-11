@@ -213,13 +213,20 @@ const recipesitems = [
   {recipeId: 28, itemId: ingreds.simpleSyrup, amount: '3/4 oz'}, //simple syrup
   {recipeId: 28, itemId: ingreds.ice}, //ice
 
-  //WHITE RUSSIAN 29
-  {recipeId: 29, itemId: ingreds.vodka, amount: '2 tbsp'}, //vodka
-  {recipeId: 29, itemId: ingreds.coffeeLiqueur, amount: '2 tbsp'}, //coffee liqueor
-  {recipeId: 29, itemId: ingreds.cream, amount: '2 tbsp'}, //cream
-  {recipeId: 29, itemId: ingreds.ice} //ice
+  //WHISKEY SOUR PARTY PUNCH 29
+  {recipeId: 29, itemId: ingreds.oj, amount: '2.5 cups'}, //orange juice
+  {recipeId: 29, itemId: ingreds.bourbon, amount: '1 cup'}, //orange juice
+  {recipeId: 29, itemId: ingreds.orangeLiqueur, amount: '1.5 cups'}, //orange liqueor
+  {recipeId: 29, itemId: ingreds.lemonjuice, amount: '0.5 cups'}, //lemon juice
+  {recipeId: 29, itemId: ingreds.sprite, amount: '3 cups'}, //sprite
 
-  // WATER 30
+  //WHITE RUSSIAN 30
+  {recipeId: 30, itemId: ingreds.vodka, amount: '2 tbsp'}, //vodka
+  {recipeId: 30, itemId: ingreds.coffeeLiqueur, amount: '2 tbsp'}, //coffee liqueor
+  {recipeId: 30, itemId: ingreds.cream, amount: '2 tbsp'}, //cream
+  {recipeId: 30, itemId: ingreds.ice} //ice
+
+  // WATER 31
 ]
 
 const seedRIs = () => Promise.all(recipesitems.map(ri => RecipeItem.create(ri)))
