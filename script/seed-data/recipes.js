@@ -195,6 +195,14 @@ const bloodyMary = {
     'https://www.liquor.com/thmb/JQp6y1xoOGVmZrViBZNBXVt9JPk=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2017__09__01105541__classic-bloody-mary-720x720-recipe-22e93e6d3426461fa89ffc946640c58c.jpg',
   source: 'https://www.liquor.com/recipes/classic-bloody-mary/'
 }
+const sparklingCampariOrange = {
+  name: 'Sparkling Campari Orange Cocktail',
+  description:
+    'Fill a glass with ice. $Add an ounce of Campari. $Add two ounces of orange juice. $Add an ounce of sparkling water. $Watch all the colours mix and swirl and sparkle!',
+  imageURL:
+    'https://www.imagelicious.com/wp-content/uploads/2018/10/Campari-Orange-4.jpg',
+  source: 'https://www.imagelicious.com/blog/sparkling-campari-orange-cocktail'
+}
 
 async function seedRecipes() {
   await Recipe.create(americano)
@@ -215,6 +223,7 @@ async function seedRecipes() {
   await Recipe.create(negroni)
   await Recipe.create(oldFashioned)
   await Recipe.create(sidecar)
+  await Recipe.create(sparklingCampariOrange)
   await Recipe.create(tequilaOnTheRocks)
   await Recipe.create(tequilaSoda)
   await Recipe.create(vodkaGimlet)

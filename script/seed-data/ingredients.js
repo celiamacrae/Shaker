@@ -33,6 +33,7 @@ const worcestershire = {name: 'Worcestershire Sauce', category: 'ingredient'}
 const hotsauce = {name: 'Hot Sauce', category: 'ingredient'}
 const celery = {name: 'Celery', category: 'ingredient'}
 const greenOlives = {name: 'Green Olives', category: 'ingredient'}
+const sparklingWater = {name: 'Sparkling Water', category: 'ingredient'}
 
 async function seedIngredients() {
   await Item.create(bitters)
@@ -58,6 +59,7 @@ async function seedIngredients() {
   await Item.create(pineapplejuice)
   await Item.create(salt)
   await Item.create(sugar)
+  await Item.create(sparklingWater)
   await Item.create(syrup)
   await Item.create(tomatojuice)
   await Item.create(tonic)

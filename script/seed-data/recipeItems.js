@@ -36,13 +36,14 @@ let ingreds = {
   pineapplejuice: 33, //new
   salt: 34,
   sugar: 35,
-  simpleSyrup: 36,
-  tomatojuice: 37, //new
-  tonic: 38,
-  worcestershire: 39, //newnew
-  blender: 40,
-  shaker: 41,
-  muddler: 42
+  sparklingWater: 36, //newnew
+  simpleSyrup: 37,
+  tomatojuice: 38, //new
+  tonic: 39,
+  worcestershire: 40, //newnew
+  blender: 41,
+  shaker: 42,
+  muddler: 43
 }
 
 const recipesitems = [
@@ -53,14 +54,14 @@ const recipesitems = [
   {recipeId: 1, itemId: ingreds.ice}, //ice
 
   //BLOODY MARY 2
-  {recipeId: 2, itemId: ingreds.salt, amount: '1 tsp'},
-  {recipeId: 2, itemId: ingreds.ice, amount: '1 cup'},
-  {recipeId: 2, itemId: ingreds.vodka, amount: '1.5 oz'},
-  {recipeId: 2, itemId: ingreds.tomatojuice, amount: '3/4 cup'},
-  {recipeId: 2, itemId: ingreds.hotsauce, amount: '1 dash'},
-  {recipeId: 2, itemId: ingreds.pepper},
-  {recipeId: 2, itemId: ingreds.celery, amount: '1 stalk'},
-  {recipeId: 2, itemId: ingreds.greenOlives, amount: '2'},
+  {recipeId: 2, itemId: ingreds.salt, amount: '1 tsp'}, //salt
+  {recipeId: 2, itemId: ingreds.ice, amount: '1 cup'}, //ice
+  {recipeId: 2, itemId: ingreds.vodka, amount: '1.5 oz'}, //vodka
+  {recipeId: 2, itemId: ingreds.tomatojuice, amount: '3/4 cup'}, //tomato juice
+  {recipeId: 2, itemId: ingreds.hotsauce, amount: '1 dash'}, //hot sauce
+  {recipeId: 2, itemId: ingreds.pepper}, //pepper
+  {recipeId: 2, itemId: ingreds.celery, amount: '1 stalk'}, //celery
+  {recipeId: 2, itemId: ingreds.greenOlives, amount: '2'}, //green olives
 
   //BOURBON ON THE ROCKS 3
   {recipeId: 3, itemId: ingreds.bourbon, amount: '2 oz'}, //bourbon
@@ -159,52 +160,58 @@ const recipesitems = [
   {recipeId: 18, itemId: ingreds.sugar}, //sugar
   {recipeId: 18, itemId: ingreds.orange}, //orange
 
-  //TEQUILA ON THE ROCKS 19
-  {recipeId: 19, itemId: ingreds.tequila, amount: '2 oz'}, //tequila
+  //SPARKLING CAMPARI ORANGE COCKTAIL 19
   {recipeId: 19, itemId: ingreds.ice}, //ice
+  {recipeId: 19, itemId: ingreds.campari, amount: '1 oz'}, //campari
+  {recipeId: 19, itemId: ingreds.oj, amount: '2 oz'}, //orange juice
+  {recipeId: 19, itemId: ingreds.sparklingWater, amount: '1 oz'}, //sparkling water
 
-  //TEQUILA SODA 20
+  //TEQUILA ON THE ROCKS 20
   {recipeId: 20, itemId: ingreds.tequila, amount: '2 oz'}, //tequila
-  {recipeId: 20, itemId: ingreds.clubSoda}, //club soda
   {recipeId: 20, itemId: ingreds.ice}, //ice
 
-  //VODKA GIMLET 21
-  {recipeId: 21, itemId: ingreds.vodka, amount: '2 oz'}, //vodka
-  {recipeId: 21, itemId: ingreds.lime}, //lime
+  //TEQUILA SODA 21
+  {recipeId: 21, itemId: ingreds.tequila, amount: '2 oz'}, //tequila
+  {recipeId: 21, itemId: ingreds.clubSoda}, //club soda
   {recipeId: 21, itemId: ingreds.ice}, //ice
-  {recipeId: 21, itemId: ingreds.shaker}, //cocktail shaker
 
-  //VODKA MARTINI 22
+  //VODKA GIMLET 22
   {recipeId: 22, itemId: ingreds.vodka, amount: '2 oz'}, //vodka
-  {recipeId: 22, itemId: ingreds.vermouth, amount: '1 oz'}, //vermouth
+  {recipeId: 22, itemId: ingreds.lime}, //lime
   {recipeId: 22, itemId: ingreds.ice}, //ice
+  {recipeId: 22, itemId: ingreds.shaker}, //cocktail shaker
 
-  //VODKA ON THE ROCKS 23
+  //VODKA MARTINI 23
   {recipeId: 23, itemId: ingreds.vodka, amount: '2 oz'}, //vodka
+  {recipeId: 23, itemId: ingreds.vermouth, amount: '1 oz'}, //vermouth
   {recipeId: 23, itemId: ingreds.ice}, //ice
 
-  //VODKA SODA 24
+  //VODKA ON THE ROCKS 24
   {recipeId: 24, itemId: ingreds.vodka, amount: '2 oz'}, //vodka
-  {recipeId: 24, itemId: ingreds.clubSoda}, //club soda
   {recipeId: 24, itemId: ingreds.ice}, //ice
 
-  //WHISKEY ON THE ROCKS 25
-  {recipeId: 25, itemId: ingreds.whiskey, amount: '2 oz'}, //whiskey
+  //VODKA SODA 25
+  {recipeId: 25, itemId: ingreds.vodka, amount: '2 oz'}, //vodka
+  {recipeId: 25, itemId: ingreds.clubSoda}, //club soda
   {recipeId: 25, itemId: ingreds.ice}, //ice
 
-  //WHISKEY SOUR 26
+  //WHISKEY ON THE ROCKS 26
   {recipeId: 26, itemId: ingreds.whiskey, amount: '2 oz'}, //whiskey
-  {recipeId: 26, itemId: ingreds.lemon, amount: '3/4 oz'}, //lemon juice
-  {recipeId: 26, itemId: ingreds.simpleSyrup, amount: '3/4 oz'}, //simple syrup
   {recipeId: 26, itemId: ingreds.ice}, //ice
 
-  //WHITE RUSSIAN 27
-  {recipeId: 27, itemId: ingreds.vodka, amount: '2 tbsp'}, //vodka
-  {recipeId: 27, itemId: ingreds.coffeeLiqueur, amount: '2 tbsp'}, //coffee liqueor
-  {recipeId: 27, itemId: ingreds.cream, amount: '2 tbsp'}, //cream
-  {recipeId: 27, itemId: ingreds.ice} //ice
+  //WHISKEY SOUR 27
+  {recipeId: 27, itemId: ingreds.whiskey, amount: '2 oz'}, //whiskey
+  {recipeId: 27, itemId: ingreds.lemon, amount: '3/4 oz'}, //lemon juice
+  {recipeId: 27, itemId: ingreds.simpleSyrup, amount: '3/4 oz'}, //simple syrup
+  {recipeId: 27, itemId: ingreds.ice}, //ice
 
-  // WATER 28
+  //WHITE RUSSIAN 28
+  {recipeId: 28, itemId: ingreds.vodka, amount: '2 tbsp'}, //vodka
+  {recipeId: 28, itemId: ingreds.coffeeLiqueur, amount: '2 tbsp'}, //coffee liqueor
+  {recipeId: 28, itemId: ingreds.cream, amount: '2 tbsp'}, //cream
+  {recipeId: 28, itemId: ingreds.ice} //ice
+
+  // WATER 29
 ]
 
 const seedRIs = () => Promise.all(recipesitems.map(ri => RecipeItem.create(ri)))
