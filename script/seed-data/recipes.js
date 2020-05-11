@@ -203,6 +203,14 @@ const sparklingCampariOrange = {
     'https://www.imagelicious.com/wp-content/uploads/2018/10/Campari-Orange-4.jpg',
   source: 'https://www.imagelicious.com/blog/sparkling-campari-orange-cocktail'
 }
+const tomColins = {
+  name: 'Tom Collins',
+  description:
+    'Add the gin, lemon juice and simple syrup into a Collins glass. $Fill with ice, top with club soda and stir. $Optionally: Garnish with a lemon wheel and maraschino cherry.',
+  imageURL:
+    'https://www.liquor.com/thmb/4SIABFe9XWJ0VmHSsksaRmrIpuc=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2019__04__03080950__Tom-Collins-720x720-recipe-e87bf7954cdb4438b5e8d21f568cdd6f.jpg',
+  source: 'https://www.liquor.com/recipes/tom-collins-2/'
+}
 
 async function seedRecipes() {
   await Recipe.create(americano)
@@ -226,6 +234,7 @@ async function seedRecipes() {
   await Recipe.create(sparklingCampariOrange)
   await Recipe.create(tequilaOnTheRocks)
   await Recipe.create(tequilaSoda)
+  await Recipe.create(tomColins)
   await Recipe.create(vodkaGimlet)
   await Recipe.create(vodkaMartini)
   await Recipe.create(vodkaOnTheRocks)
