@@ -5,7 +5,7 @@ const tequilaSoda = {
   description:
     'Fill a glass with ice and add 2oz of tequila. $Top with club soda. $Optionally: add a squeeze of lime or grapefruit.',
   imageURL:
-    'https://qph.fs.quoracdn.net/main-qimg-dc6e5d9137dead9834e5b339c97ad430'
+    'https://2cookinmamas.com/wp-content/uploads/2017/03/Sparkling-Tequila-Cocktail-square.jpg'
 }
 const vodkaSoda = {
   name: 'Vodka Soda',
@@ -26,7 +26,7 @@ const tequilaOnTheRocks = {
   description:
     'Fill a rocks glass to the top with ice cubes. $Pour in 2oz of tequila. $Optionally: Garnish with lime zest.',
   imageURL:
-    'https://www.patrontequila.com/binaries/largeretina/content/gallery/patrontequila/recipes/patron-anejo/a-ejo-on-the-rocks/cocktail.jpg'
+    'https://www.liquor.com/thmb/nheYWv4aOciafqol4DcqkAQN0kU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2017__07__13093600__OldFashion-720x720-18de0d8d98ed4bb3881455dd94ebc13d.jpg'
 }
 const moscowMule = {
   name: 'Moscow Mule',
@@ -201,7 +201,7 @@ const sparklingCampariOrange = {
   description:
     'Fill a glass with ice. $Add an ounce of Campari. $Add two ounces of orange juice. $Add an ounce of sparkling water. $Watch all the colours mix and swirl and sparkle!',
   imageURL:
-    'https://www.imagelicious.com/wp-content/uploads/2018/10/Campari-Orange-4.jpg',
+    'https://www.liquor.com/thmb/lZruC6rn5jdkDYsgX4d8RETKprY=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2017__01__30141023__Make-It-Count-720x720-recipe-b2033942d9714401b81f57ff16d6e017.jpg',
   source: 'https://www.imagelicious.com/blog/sparkling-campari-orange-cocktail'
 }
 const tomColins = {
