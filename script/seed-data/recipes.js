@@ -12,14 +12,14 @@ const vodkaSoda = {
   description:
     'Fill a glass with ice and add 2oz of vodka. $Top with club soda. $Optionally: add a squeeze of lime or lemon.',
   imageURL:
-    'https://www.tasteofhome.com/wp-content/uploads/2019/07/cocktail-shutterstock_422747731.jpg'
+    'https://www.homewetbar.com/media/catalog/product/cache/265d7bf611d39b8f80e93d32d7319b33/8/1/8142-marquee-vodka-and-soda-rocks-glass_1.jpg'
 }
 const vodkaOnTheRocks = {
   name: 'Vodka on the Rocks',
   description:
     'Fill a rocks glass to the top with ice cubes. $Pour in 2oz of vodka. $Optionally: Garnish with lemon zest.',
   imageURL:
-    'https://us.inshaker.com/uploads/cocktail/hires/283/1556126126-Vodka-on-the-Rocks__highres.jpg'
+    'https://realwines.ch/wp-content/uploads/2018/07/stock-photo-glass-of-vodka-on-the-rocks-with-lemon-80006044.jpg'
 }
 const tequilaOnTheRocks = {
   name: 'Tequila on the Rocks',
@@ -138,7 +138,7 @@ const whiteRussian = {
   description:
     'Fill an old fashioned glass with ice. $Pour in vodka, coffee liqueur, and cream. $Stir until combined.',
   imageURL:
-    'https://images.immediate.co.uk/production/volatile/sites/2/2020/02/Cocktail-1-4c4450d.jpg?webp=true&quality=45&resize=1240%2C826'
+    'https://www.liquor.com/thmb/Xk0R_GXBXilIevvXulgxxgho0yo=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/white-russian-720x720-article-edf9724ecfc84d56bc90f390d53d6f85.jpg'
 }
 const mojito = {
   name: 'Mojito',
@@ -157,8 +157,7 @@ const whiskeyOnTheRocks = {
   name: 'Whiskey on the Rocks',
   description:
     'Fill a rocks glass to the top with ice cubes. $Pour in 2oz of whiskey.',
-  imageURL:
-    'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/701/molecular-reason-drink-whiskey-rocks-1503059521.jpg'
+  imageURL: 'https://www.wemu.org/sites/wemu/files/201412/Rocks_Glass.jpg'
 }
 const bourbonOnTheRocks = {
   name: 'Bourbon on the Rocks',
@@ -216,8 +215,8 @@ const whiskeyPunch = {
   name: 'Whiskey Sour Party Punch',
   description:
     'In a large bowl or pitcher, combine all ingredients except the Sprite. Stir well. $Chill and add Sprite before serving. $Optional: Add sliced lemons and oranges.',
-  imageURL: 'https://c1.staticflickr.com/5/4168/34022496890_89d6d4c566_o.png',
-  source: 'http://www.tastefullyeclectic.com/whiskey-sour-party-punch-recipe/'
+  imageURL:
+    'https://static.onecms.io/wp-content/uploads/sites/9/2015/11/WHISKEY1115-XL-fwx-cocktail-whiskey-punch.jpg'
 }
 
 async function seedRecipes() {
