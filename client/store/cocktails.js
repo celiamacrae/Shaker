@@ -42,9 +42,7 @@ export const shake = myBarItems => async dispatch => {
 
     let goodRecipes = []
 
-    console.log('here', recipeNames)
     recipeNames.forEach(recipeName => {
-      console.log('YA', recipeName)
       let items = recipes[recipeName]
       let add = true
 
@@ -58,12 +56,7 @@ export const shake = myBarItems => async dispatch => {
       }
     })
 
-    console.log('GOOD RECIPES', goodRecipes)
-
     dispatch(shakeCocktails(goodRecipes))
-
-    // console.log("!!!", myBarItems)
-    // console.log(recipes)
   } catch (err) {
     console.error(err)
   }
