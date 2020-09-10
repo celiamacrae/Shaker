@@ -34,7 +34,6 @@ class Items extends React.Component {
     await this.setState({
       [event.target.name]: event.target.value
     })
-    console.log('this.state', this.state.search)
   }
 
   render() {
