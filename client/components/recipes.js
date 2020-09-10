@@ -23,7 +23,6 @@ class Recipes extends React.Component {
   }
 
   render() {
-    console.log(this.props.recipes)
     return (
       <div>
         <h1>RECIPES:</h1>
@@ -33,6 +32,7 @@ class Recipes extends React.Component {
               return (
                 <div key={recipe.id}>
                   <li>
+                    {/* <img id="cocktail_img" src={recipe.imageURL} /> */}
                     <Link to={`/recipes/${this.urlify(recipe.name)}`}>
                       {recipe.name}
                     </Link>

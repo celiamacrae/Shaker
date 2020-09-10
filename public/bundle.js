@@ -694,7 +694,6 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log(this.props.recipes);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "RECIPES:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, this.props.recipes.map(function (recipe) {
         if (recipe.name !== 'Water') {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
