@@ -54,7 +54,7 @@ const daquiri = {
   description:
     'Shake 2oz rum, 0.5 oz simple syrup and 1 oz fresh lime juice over ice. $Pour into a coup glass and serve straight up. ',
   imageURL:
-    'https://assets3.thrillist.com/v1/image/1707944/1584x3000/scale;jpeg_quality=60.jpg'
+    'https://i2.wp.com/dishesdelish.com/wp-content/uploads/2018/08/Classic-Daiquiri-Square-3.jpg'
 }
 const whiskeySour = {
   name: 'Whiskey Sour',
@@ -68,7 +68,7 @@ const darkStormy = {
   description:
     'Fill glass with ice. $Add rum, and then top with ginger beer. $Squeeze in, and then garnish with lime wedge.',
   imageURL:
-    'https://www.liquor.com/thmb/vtUBz5WfzE9GdbD44fd5-pu8y8w=/720x540/smart/filters:no_upscale()/__opt__aboutcom__coeus__resources__content_migration__liquor__2016__10__04133803__dark-n-stormy-720sq-e78a585d82524a45a8783f94b76f0963.jpg'
+    'https://www.liquor.com/thmb/e5U_ixZzKIComkO9okCMkXMwUNE=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/dark-and-stormy-720x720-recipe-95f288ed6697444ab3301f8670b4564e.jpg'
 }
 const negroni = {
   name: 'Negroni',
