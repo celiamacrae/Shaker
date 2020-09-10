@@ -131,7 +131,7 @@ const champagneCocktail = {
   description:
     'Add 2 dashes of bitter and a sugar cube into a champagne flute. $Add cognac followed by gently pouring chilled champagne. $Optionally: a lemon twist over top.',
   imageURL:
-    'https://www.thespruceeats.com/thmb/je29oIG13icQ6-XE3Vl24O2jOzE=/4048x2277/smart/filters:no_upscale()/champagne-cocktail-recipe-759288-hero-5bdca167c9e77c005142234d.jpg'
+    'https://www.liquor.com/thmb/tpMbjzlnrR7Os8izw21_foqRozc=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/champagne-cocktail-720x720-primary-cd701e31bfb94e4ebee029eb37cbda2f.jpg'
 }
 const whiteRussian = {
   name: 'White Russian',
@@ -165,7 +165,7 @@ const bourbonOnTheRocks = {
   description:
     'Fill a rocks glass to the top with ice cubes. $Pour in 2oz of bourbon whiskey.',
   imageURL:
-    'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/701/molecular-reason-drink-whiskey-rocks-1503059521.jpg'
+    'https://www.liquor.com/thmb/ArBw0h1rErHVi23k4LqH0ytSVF8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2011__01__bourbon-on-the-rocks-6b509947c1884da6b077cad71bdb5c91.jpg'
 }
 const americano = {
   name: 'Americano',

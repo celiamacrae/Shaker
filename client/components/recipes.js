@@ -31,12 +31,12 @@ class Recipes extends React.Component {
             if (recipe.name !== 'Water') {
               return (
                 <div key={recipe.id}>
-                  <li>
-                    {/* <img id="cocktail_img" src={recipe.imageURL} /> */}
-                    <Link to={`/recipes/${this.urlify(recipe.name)}`}>
-                      {recipe.name}
-                    </Link>
-                  </li>
+                  {/* <li> */}
+                  <img id="cocktail_img" src={recipe.imageURL} />
+                  <Link to={`/recipes/${this.urlify(recipe.name)}`}>
+                    {recipe.name}
+                  </Link>
+                  {/* </li> */}
                 </div>
               )
             }
