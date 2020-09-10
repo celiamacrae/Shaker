@@ -27,8 +27,6 @@ class Shake extends React.Component {
   }
 
   render() {
-    console.log('here', this.props)
-    console.log('HERE>>>>', this.state)
     return (
       <div className="here">
         <Grid container justify="center">
