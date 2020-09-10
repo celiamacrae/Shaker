@@ -75,28 +75,28 @@ const negroni = {
   description:
     'Stir 1oz dry gin, 1oz sweet vermouth, and 1 oz Campari with ice for 20 seconds. $Optionally: garnish with orange peel.',
   imageURL:
-    'https://images.immediate.co.uk/production/volatile/sites/2/2018/08/Negroni_FLAT-87033d9.jpg?quality=90&resize=768%2C574'
+    'https://www.liquor.com/thmb/F-OeHvMRiQ55Pn2CNi802lvesaQ=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2012__05__dutch-negroni1-ff0b79c2e60547bebc17d43901907f82.jpg'
 }
 const ginMartini = {
   name: 'Gin Martini',
   description:
     'Add 2 oz gin, 1 oz dry vermouth and ice into shaker. $Stir (do not shake) for about 10 seconds. $Strain into coup glass. $Optionally: garnish with lemon peel and olive.',
   imageURL:
-    'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2008/12/5/0/Diageo-TheUltimateKetelOneDirtyMartini_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371587457387.jpeg'
+    'https://www.liquor.com/thmb/TsF4e-mKzswG7aWNAHGudvVM3s4=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__06__11135226__Lighten-Up-with-These-4-Riffs-on-the-Reverse-Vodka-Martini-720x720-article-17fc332e6ab54dba8b0193cebae29a52.jpg'
 }
 const vodkaMartini = {
   name: 'Vodka Martini',
   description:
     'Add 2 oz vodka, 1 oz dry vermouth and ice into shaker. $Stir (do not shake) for about 10 seconds. $Strain into coup glass. $Optionally: garnish with lemon peel and olive.',
   imageURL:
-    'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2008/12/5/0/Diageo-TheUltimateKetelOneDirtyMartini_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371587457387.jpeg'
+    'https://www.liquor.com/thmb/SAWLaMg8mlwccCqsBRdF9aHLsMw=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__09__05093330__dry-martini-720x720-recipe-8a80821c4ca944849690af8cda90cc03.jpg'
 }
 const manhattan = {
   name: 'Manhattan',
   description:
     'Stir whiskey, vermouth, and bitters with cracked ice. $Strain into a chilled coup. $Garnish with orange peel and or brandied cherry.',
   imageURL:
-    'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2013/2/13/0/ED0309H_classic-manhattan-cocktail_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371614573383.jpeg'
+    'https://www.liquor.com/thmb/LBcDyZrIonkctc20L93gMvn-jvQ=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__04__23135055__Frank-Magnasco_Drink1-14cf380c1c9f46e98f26346faef699d0.jpg'
 }
 const sidecar = {
   name: 'Sidecar',
@@ -124,7 +124,7 @@ const margarita = {
   description:
     'Rub a lime wedge over the edge of a rocks glass (or Margarita glass) then twist it on a plate of coarse salt so that it attaches. $Shake tequila, orange liqueur, and lime juice in a shaker with cracked ice. $Strain in a glass over ice.',
   imageURL:
-    'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/marg-h-1526063646.jpg'
+    'https://www.liquor.com/thmb/HzYcHscHlBK0Dj5M6eJOb5M9YjQ=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__04__23134943__Margarita-720x720-recipe-v2-6dc3213825c94a9cb6d7ce1818ce6e31.jpg'
 }
 const champagneCocktail = {
   name: 'Champagne Cocktail',
@@ -178,14 +178,15 @@ const hotToddy = {
   name: 'Hot Toddy',
   description:
     'In a teapot or saucepan, bring 3/4 cup of water to a boil. $Pour the hot water into a mug. $Add the whiskey, 2 tsp honey, and 2 tsp lemon juice. $Stir until the honey has disappeared into the hot water. $Taste, and add 1 teaspoon honey for more sweetness, and/or 1 teaspoon more lemon juice for more zing. $Optinally: Garnish with a lemon round and cinnamon stick (if using). Enjoy!',
-  imageURL: 'https://cookieandkate.com/images/2017/12/hot-toddy-recipe.jpg'
+  imageURL:
+    'https://www.liquor.com/thmb/OfDRO-d6EAg63y23aR2t-0mlR8k=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/hot-toddy-720x720-primary-f04e0c5aa93b40889529338c41fc6242.jpg'
 }
 const mimosa = {
   name: 'Mimosa',
   description:
     'Pour desired amount of champagne into glass or pitcher. $Top with orange juice.',
   imageURL:
-    'https://www.simplejoy.com/wp-content/uploads/2018/12/mimosa-mocktail-recipe.jpg'
+    'https://www.liquor.com/thmb/EQydLxfKp9uDonWNF-ToOQZ_HWA=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mimosa-720x720-primary-e800c18fccc94252ab7925df84bf5215.jpg'
 }
 const bloodyMary = {
   name: 'Bloody Mary',
