@@ -151,7 +151,7 @@ const water = {
   name: 'Water',
   description: 'Drink. $More. $Water.',
   imageURL:
-    'https://images.everydayhealth.com/images/healthy-living/the-health-benefits-of-water-722x406.jpg?w=1110'
+    'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-water-in-drinking-glass-on-wooden-table-royalty-free-image-1592838592.jpg?crop=0.668xw:1.00xh;0.332xw,0&resize=480:*'
 }
 const whiskeyOnTheRocks = {
   name: 'Whiskey on the Rocks',
