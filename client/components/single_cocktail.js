@@ -9,7 +9,6 @@ class SingleCocktail extends React.Component {
 
   render() {
     let key1 = 0
-    console.log(this.props.cocktail)
     return (
       <div id="cocktail_container">
         <h1>{this.props.cocktail.name}</h1>
