@@ -163,11 +163,17 @@ nav a {
 #allrec {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 #singlerec {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin: 10px;
+  margin: 15px;
+}
+
+#all_cocktail_img {
+  width: 300px;
+  height: 300px;
 }

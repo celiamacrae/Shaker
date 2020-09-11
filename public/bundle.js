@@ -699,7 +699,7 @@ function (_React$Component) {
             key: recipe.id,
             id: "singlerec"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            id: "cocktail_img",
+            id: "all_cocktail_img",
             src: recipe.imageURL
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
             to: "/recipes/".concat(_this2.urlify(recipe.name))
