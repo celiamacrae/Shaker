@@ -27,22 +27,18 @@ class Recipes extends React.Component {
       <div>
         <h1>RECIPES:</h1>
         <div id="allrec">
-          {/* <ol> */}
           {this.props.recipes.map(recipe => {
             if (recipe.name !== 'Water') {
               return (
                 <div key={recipe.id} id="singlerec">
-                  {/* <li> */}
                   <img id="all_cocktail_img" src={recipe.imageURL} />
                   <Link to={`/recipes/${this.urlify(recipe.name)}`}>
                     {recipe.name}
                   </Link>
-                  {/* </li> */}
                 </div>
               )
             }
           })}
-          {/* </ol> */}
         </div>
       </div>
     )
