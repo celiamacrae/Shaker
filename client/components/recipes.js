@@ -24,9 +24,10 @@ class Recipes extends React.Component {
 
   render() {
     return (
-      <div id="allrecipes">
+      <div>
         <h1>RECIPES:</h1>
-        <ol>
+        <div id="allrec">
+          {/* <ol> */}
           {this.props.recipes.map(recipe => {
             if (recipe.name !== 'Water') {
               return (
@@ -41,7 +42,8 @@ class Recipes extends React.Component {
               )
             }
           })}
-        </ol>
+          {/* </ol> */}
+        </div>
       </div>
     )
   }

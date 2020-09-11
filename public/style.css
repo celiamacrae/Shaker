@@ -159,3 +159,15 @@ nav a {
   display: flex;
   flex-direction: row;
 }
+
+#allrec {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#singlerec {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 10px;
+}
